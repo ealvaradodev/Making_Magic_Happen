@@ -38,7 +38,7 @@ db.query(sql, (err, result)=>{
 
 app.post('/data', function(req, res){
 	console.log(req.body); 
-    var data = {Name:req.body.Name, Breed:req.body.Breed, Gender:req.body.Gender, Size:req.body.Size};
+    var data = {Name:req.body.name, Breed:req.body.breed, Gender:req.body.gender, Size:req.body.size};
     var sql = 'INSERT INTO rabbit_info SET ?';
     db.query(sql, data, (err, result)=>{
     if(err) throw err;
