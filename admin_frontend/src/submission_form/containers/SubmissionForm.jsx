@@ -1,9 +1,11 @@
-import React, {Component} from 'react';  
+import React, {Component} from 'react'; 
+import axios from 'axios'; 
 
 /* Import Components */
 import Input from '../components/Input'; 
 import Select from '../components/Select';
-import Button from '../components/Button'
+import Button from '../components/Button';
+var apiBaseUrl = "http://localhost:4000/api/";
 
 class SubmissionForm extends Component {  
   constructor(props) {
@@ -50,19 +52,12 @@ class SubmissionForm extends Component {
   handleFormSubmit(e) {
     e.preventDefault();
     let rabbitData = this.state.newRabbit;
-
-    fetch('http://localhost:3210/data',{
-        method: "POST",
-        body: JSON.stringify(rabbitData),
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
-      }).then(response => {
-        response.json().then(data =>{
-          console.log("Successful" + data);
-        })
+    axios.post(apiBaseUrl + "rabbit", rabbitData)
+    .then(function(response){
+      // console.log(response);
     })
+    // I want a popup saying submitted after the form submission..
+    this.handleClearForm(e);
   }   
 
   handleClearForm(e) {
