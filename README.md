@@ -8,17 +8,17 @@ magic_backend
 -- clone the git repo
 
 -- cd magic backend
-  run npm install
-  in app.js
-  const db = mysql.createConnection({
-    host : 'localhost',
-    user : 'username',
-    password : 'password',
-    database : 'DataBasename'
-    });
+--run npm install
+ -- in app.js
+  --const db = mysql.createConnection({
+    --host : 'localhost',
+    --user : 'username',
+    --password : 'password',
+    --database : 'DataBasename'
+    --});
 
-run node app
+--run node app
 
 --cd admin_frontend
-  run npm install
-  run npm start
+--run npm install
+--run npm start
