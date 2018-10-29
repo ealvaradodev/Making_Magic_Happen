@@ -1,24 +1,24 @@
-# Making_Magic_Happen
-Front end and back end rebuild of MHRR website lets go
-=================================
-magic_backend
-=================================
--- make sure nodejs and mysql (i have xampp) is installed
+# Making_Magic_Happen<br>
+Front end and back end rebuild of MHRR website lets go<br>
+=================================<br>
+magic_backend<br>
+=================================<br>
+-- make sure nodejs and mysql (i have xampp) is installed<br>
 
--- clone the git repo
+-- clone the git repo<br>
 
--- cd magic backend
---run npm install
- -- in app.js
-  --const db = mysql.createConnection({
-    --host : 'localhost',
-    --user : 'username',
-    --password : 'password',
-    --database : 'DataBasename'
-    --});
+-- cd magic backend<br>
+--run npm install<br>
+ -- in app.js<br>
+  --const db = mysql.createConnection({<br>
+    --host : 'localhost',<br>
+    --user : 'username',<br>
+    --password : 'password',<br>
+    --database : 'DataBasename'<br>
+    --});<br>
 
---run node app
+--run node app<br>
 
---cd admin_frontend
---run npm install
---run npm start
+--cd admin_frontend<br>
+--run npm install<br>
+--run npm start<br>
