@@ -6,7 +6,8 @@ import TextField from 'material-ui/TextField';
 import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
 import axios from 'axios';
-import FormSubbmission from '../submission_form/containers/SubmissionForm';
+//import FormSubmission from '../submission_form/containers/SubmissionForm';
+import SubmissionForm from '../submission_form/containers/SubmissionForm';
 var apiBaseUrl = "http://localhost:4000/api/";
 
 class Login extends Component {
@@ -17,8 +18,8 @@ class Login extends Component {
       <MuiThemeProvider>
         <div>
          <TextField
-           hintText="Enter your UserID"
-           floatingLabelText="UserID"
+           hintText="Enter your Username"
+           floatingLabelText="Username"
            onChange = {(event,newValue)=>this.setState({username:newValue})}
            />
          <br/>
@@ -29,14 +30,14 @@ class Login extends Component {
              onChange = {(event,newValue) => this.setState({password:newValue})}
              />
            <br/>
-           <RaisedButton label="Submit" primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
+           <RaisedButton label="Sign In" primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
        </div>
        </MuiThemeProvider>
     )
     this.state={
       username:'',
       password:'',
-      menuValue:1,
+      menuValue:2,
       loginComponent:localloginComponent,
       loginRole:'user'
     }
@@ -51,8 +52,8 @@ class Login extends Component {
         <MuiThemeProvider>
           <div>
            <TextField
-             hintText="Enter your UserID"
-             floatingLabelText="UserID"
+             hintText="Enter your Username"
+             floatingLabelText="Username"
              onChange = {(event,newValue) => this.setState({username:newValue})}
              />
            <br/>
@@ -63,7 +64,7 @@ class Login extends Component {
                onChange = {(event,newValue) => this.setState({password:newValue})}
                />
              <br/>
-             <RaisedButton label="Submit" primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
+             <RaisedButton label="Sign In" primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
          </div>
          </MuiThemeProvider>
       )
@@ -76,8 +77,8 @@ class Login extends Component {
         <MuiThemeProvider>
           <div>
            <TextField
-             hintText="Enter your admin UserID"
-             floatingLabelText="admin UserID"
+             hintText="Enter your Master Username"
+             floatingLabelText="Master Username"
              onChange = {(event,newValue) => this.setState({username:newValue})}
              />
            <br/>
@@ -88,7 +89,7 @@ class Login extends Component {
                onChange = {(event,newValue) => this.setState({password:newValue})}
                />
              <br/>
-             <RaisedButton label="Submit" primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
+             <RaisedButton label="Sign In" primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
          </div>
          </MuiThemeProvider>
       )
@@ -100,7 +101,7 @@ class Login extends Component {
     var self = this;
     var payload={
       "userid":this.state.username,
-	   "password":this.state.password,
+	    "password":this.state.password,
       "role":this.state.loginRole
     }
     axios.post(apiBaseUrl+'login', payload)
@@ -109,8 +110,10 @@ class Login extends Component {
      if(response.data.code === 200){
        console.log("Login successfull");
        var Form=[];
-       Form.push(<FormSubbmission appContext={self.props.appContext} role={self.state.loginRole}/>)
-       self.props.appContext.setState({loginPage:[],Form:FormSubbmission})
+       Form.push(<SubmissionForm appContext={self.props.appContext} role={self.state.loginRole}/>)
+       //Form.push(<FormSubmission appContext={self.props.appContext} role={self.state.loginRole}/>)
+       //self.props.appContext.setState({loginPage:[],Form:FormSubmission})
+       self.props.appContext.setState({loginPage:[],Form:SubmissionForm})
      }
      else if(response.data.code === 204){
        console.log("Username password do not match");
@@ -135,8 +138,8 @@ class Login extends Component {
         <MuiThemeProvider>
           <div>
            <TextField
-             hintText="Enter your UserID"
-             floatingLabelText="UserID"
+             hintText="Enter your Username"
+             floatingLabelText="Username"
              onChange = {(event,newValue) => this.setState({username:newValue})}
              />
            <br/>
@@ -147,7 +150,7 @@ class Login extends Component {
                onChange = {(event,newValue) => this.setState({password:newValue})}
                />
              <br/>
-             <RaisedButton label="Submit" primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
+             <RaisedButton label="Sign In" primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
          </div>
          </MuiThemeProvider>
       )
@@ -159,8 +162,8 @@ class Login extends Component {
         <MuiThemeProvider>
           <div>
            <TextField
-             hintText="Enter your admin UserID"
-             floatingLabelText="admin UserID"
+             hintText="Enter your Master Username"
+             floatingLabelText="Master Username"
              onChange = {(event,newValue) => this.setState({username:newValue})}
              />
            <br/>
@@ -171,7 +174,7 @@ class Login extends Component {
                onChange = {(event,newValue) => this.setState({password:newValue})}
                />
              <br/>
-             <RaisedButton label="Submit" primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
+             <RaisedButton label="Sign In" primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
          </div>
          </MuiThemeProvider>
       )
@@ -192,8 +195,8 @@ class Login extends Component {
         <div>
         <p>Login as:</p>
         <DropDownMenu value={this.state.menuValue} onChange={(event,index,value)=>this.handleMenuChange(value)}>
-          <MenuItem value={1} primaryText="admin" />
-          <MenuItem value={2} primaryText="user" />
+          <MenuItem value={1} primaryText="Master" />
+          <MenuItem value={2} primaryText="Foster" />
         </DropDownMenu>
         </div>
         </MuiThemeProvider>
