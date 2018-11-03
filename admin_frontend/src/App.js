@@ -27,6 +27,9 @@ class App extends Component {
     render() {
       return (
         <div className="App">
+          <cards>
+            this is the card
+        </cards>
           {this.state.loginPage}
           {this.state.SubmissionForm}
         </div>
