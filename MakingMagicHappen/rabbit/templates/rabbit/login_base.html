@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'login_style.css' %}" />
+</head>
+	<body>
+		{% block content %}
+		
+		{% endblock %}
+	
+		<script>
+			// Get the modal
+			var modal = document.getElementById('id01');
+			// When the user clicks anywhere outside of the modal, close it
+			window.onclick = function(event) {
+    			if (event.target == modal) {
+        			modal.style.display = "none";
+    			}
+			}
+		</script>
+	</body>
+</html>
