@@ -19,8 +19,9 @@ from django.views.generic.base import TemplateView
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-	path('', include('rabbit.urls')),	
-	path(r'^login/$', auth_views.login, {'template_name': 'core/login.html'}, name='login'),
+	path('', include('rabbit.urls')),
+    path(r'^home/$', TemplateView.as_view(template_name='rabbit/home.html'), name='home'),	
+	path(r'^login/$', auth_views.login, {'template_name': 'rabbit/login.html'}, name='login'),
      path(r'^admin/', admin.site.urls),
 	# path('logout/', auth_views.LogoutView.as_view(), name='logout'),
 ]
