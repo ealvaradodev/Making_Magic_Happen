@@ -36,7 +36,7 @@
                     {%block nav%}
                     <nav id="nav-menu-container">
                       <ul class="nav-menu">
-                        <li class="menu-active"><a href="home.html">Home</a></li>
+                        <li class="menu-active"><a href="{%url 'rabbit:home'%}">Home</a></li>
                         <li><a href="#">About Us</a></li>
                         <li><a href="{%url 'rabbit:adopt'%}">Adopt</a></li>
                         <li><a href="#">Dogs</a></li>
@@ -47,7 +47,7 @@
                             <li><a href="#">Blog Single</a></li>
                           </ul>
                         </li>						          
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="{%url 'rabbit:contact'%}">Contact</a></li>
                         <li><a href="{%url 'rabbit:login'%}"> login </a></li>
                         <li class="menu-has-children"><a href="">Dropdown</a>
                           <ul>

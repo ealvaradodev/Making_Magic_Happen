@@ -10,5 +10,7 @@ app_name = 'rabbit'
 urlpatterns = [
 	url(r'^$', TemplateView.as_view(template_name='rabbit/home.html'), name='home'),
     url(r'^login/$', auth_views.login, {'template_name': 'rabbit/login.html'}, name='login'),
+    url(r'^adopt/$', TemplateView.as_view(template_name='rabbit/adopt.html'), name='adopt'),
+    url(r'^contact/$', TemplateView.as_view(template_name='rabbit/contact.html'), name='contact'),
 ]
 
