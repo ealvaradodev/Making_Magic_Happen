@@ -5,6 +5,9 @@ magic_backend<br>
 =================================<br>
 requirement for program to run.. <br>
 python version 3.6.2 or 3.6.5 <br>
+Video for setup:
+  https://www.youtube.com/watch?v=3lGhtIqT0Tk
+  
 (not sure if it will get automatically installed, but make sure pip is installed) python -m pip install -U pip <br>
 if you hace already make sure you upgrade you pip <br>
 pip install Django==2.0.6
