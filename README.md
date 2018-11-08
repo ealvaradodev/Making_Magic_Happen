@@ -3,22 +3,11 @@ Front end and back end rebuild of MHRR website lets go<br>
 =================================<br>
 magic_backend<br>
 =================================<br>
--- make sure nodejs and mysql (i have xampp) is installed<br>
+requirement for program to run.. <br>
+python version 3.6.2 or 3.6.5 <br>
+(not sure if it will get automatically installed, but make sure pip is installed) python -m pip install -U pip <br>
+if you hace already make sure you upgrade you pip <br>
+pip install Django==2.0.6
+inside the folder Making_Magic_Happen/makingMagicHappen   ---> (run) python manage.py runserver [make sure xampp is on] <br>
+(might need to install mysqlclient) [pip install mysqlClient should work if not I will update this soon..]<br>
 
--- clone the git repo<br>
-
--- cd magic backend<br>
---run npm install<br>
- -- in app.js<br>
-  --const db = mysql.createConnection({<br>
-    --host : 'localhost',<br>
-    --user : 'username',<br>
-    --password : 'password',<br>
-    --database : 'DataBasename'<br>
-    --});<br>
-
---run node app<br>
-
---cd admin_frontend<br>
---run npm install<br>
---run npm start<br>
