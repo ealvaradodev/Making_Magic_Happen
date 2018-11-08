@@ -9,5 +9,6 @@ python version 3.6.2 or 3.6.5 <br>
 if you hace already make sure you upgrade you pip <br>
 pip install Django==2.0.6
 inside the folder Making_Magic_Happen/makingMagicHappen   ---> (run) python manage.py runserver [make sure xampp is on] <br>
-(might need to install mysqlclient) [pip install mysqlClient should work if not I will update this soon..]<br>
+(might need to install mysqlclient) [pip install mysqlClient should work if not use<br>
+pip install --only-binary :all: mysqlclient
 
