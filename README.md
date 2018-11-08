@@ -7,6 +7,8 @@ requirement for program to run.. <br>
 python version 3.6.2 or 3.6.5 <br>
 Video for setup for python :
   https://www.youtube.com/watch?v=3lGhtIqT0Tk
+  
+  
 Video for setup for pip :
 https://www.youtube.com/watch?v=zPMr0lEMqpo  
   
