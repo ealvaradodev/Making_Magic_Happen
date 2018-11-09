@@ -15,12 +15,12 @@ https://www.youtube.com/watch?v=zPMr0lEMqpo
 (not sure if it will get automatically installed, but make sure pip is installed) 
 
 
-python -m pip install -U pip 
+      python -m pip install -U pip 
 
 
 if you have already make sure you upgrade you pip 
 
-pip install Django==2.0.6
+      pip install Django==2.0.6
 
 
 xampp:
@@ -42,11 +42,11 @@ inside the folder Making_Magic_Happen/makingMagicHappen (in cmd)
 (might need to install mysqlclient):
 
 
-pip install mysqlClient 
+      pip install mysqlClient 
 
 
 should work if not use:
 
 
-pip install --only-binary :all: mysqlclient
+      pip install --only-binary :all: mysqlclient
 
