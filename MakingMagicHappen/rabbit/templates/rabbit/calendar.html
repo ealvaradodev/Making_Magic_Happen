@@ -1,0 +1,35 @@
+{% extends 'rabbit/base.html' %}
+{% block cssLink %}
+<!--CSS file (default YUI Sam Skin) -->
+<script type="text/javascript" src="build/yahoo/yahoo.js"></script> 
+<script type="text/javascript" src="build/event/event.js" ></script> 
+<script type="text/javascript" src="build/dom/dom.js" ></script> 
+	 
+<script type="text/javascript" src="build/calendar/calendar.js"></script> 
+<link type="text/css" rel="stylesheet" href="build/calendar/assets/skins/sam/calendar.css">
+{% endblock cssLink %}
+{% block content %}
+<section class="banner-area relative" id="home">
+        <div class="container">
+            <div class="overlay overlay-bg"></div>
+            <div class="row fullscreen d-flex align-items-center justify-content-start">
+                <div class="card">
+                    <div class =""yui-skin-sam>
+                            <div id="cal1Container"></div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block scriptLink %}
+<script> 
+	YAHOO.namespace("example.calendar"); 	 
+    YAHOO.example.calendar.init = function() { 
+    YAHOO.example.calendar.cal1 = new YAHOO.widget.Calendar("cal1","cal1Container"); 
+    YAHOO.example.calendar.cal1.render(); 
+    } 	 
+    YAHOO.util.Event.onDOMReady(YAHOO.example.calendar.init); 
+</script> 
+{% endblock scriptLink %}
