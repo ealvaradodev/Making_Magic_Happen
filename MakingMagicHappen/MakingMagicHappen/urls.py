@@ -23,5 +23,5 @@ urlpatterns = [
     path(r'^home/$', TemplateView.as_view(template_name='rabbit/home.html'), name='home'),	
 	path(r'^login/$', auth_views.login, {'template_name': 'rabbit/login.html'}, name='login'),
      path(r'^admin/', admin.site.urls),
-	# path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+	path(r'logout/', auth_views.LogoutView.as_view(), name='logout'),
 ]
