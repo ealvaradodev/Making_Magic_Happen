@@ -24,7 +24,9 @@
 			<link rel="stylesheet" type="text/css" href="{% static 'css/nice-select.css' %}">							
 			<link rel="stylesheet" type="text/css" href="{% static 'css/animate.min.css' %}">
 			<link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.css' %}">
-			<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+      <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+      {% block csslink%}
+      {% endblock csslink %}
         </head>
         <body>
             <header id="header" id="home">
@@ -33,23 +35,21 @@
                     <div id="logo">
                       <a href="home.html"><img src="#" alt="" title="" /></a>
                     </div>
-                    {%block nav%}
                     <nav id="nav-menu-container">
                       <ul class="nav-menu">
                         <li class="menu-active"><a href="{%url 'rabbit:home'%}">Home</a></li>
                         <li><a href="#">About Us</a></li>
                         <li><a href="{%url 'rabbit:adopt'%}">Adopt</a></li>
-                        <li><a href="#">Dogs</a></li>
+                        <li><a href="{% url 'rabbit:calendar'%}">Calendar</a></li>
                         <li><a href="#">Volunteer</a></li>
-                        <li class="menu-has-children"><a href="">Blog</a>
+                        <!-- <li class="menu-has-children"><a href="">Blog</a>
                           <ul>
                             <li><a href="#">Blog Home</a></li>
                             <li><a href="#">Blog Single</a></li>
                           </ul>
-                        </li>						          
+                        </li>						           -->
                         <li><a href="{%url 'rabbit:contact'%}">Contact</a></li>
-                        <li><a href="{%url 'rabbit:login'%}"> login </a></li>
-                        <li class="menu-has-children"><a href="">Dropdown</a>
+                        <!-- <li class="menu-has-children"><a href="">Dropdown</a>
                           <ul>
                             <li><a href="#">Elements</a></li>	
                             <li><a href="#">Item</a></li>
@@ -60,10 +60,25 @@
                               </ul>
                             </li>	
                           </ul>
-                        </li>				              
+                        </li>	 -->
+                        {% if user.is_authenticated %}
+                          {% if user.is_superuser%}
+                            <li><a href="#"> Register User </a></li>
+                          {% endif %}
+                          <li><a href="#"> Rabbit Submission Form</a></li>
+                          <li class = "menu-has-children"><a href="{% url 'rabbit:home'%}">{{user.username}} </a>
+                            <ul>
+                              <li><a href="{% url 'logout' %}">
+                                  <span class="no-icon">Log out </span>
+                                </a>
+                              </li>
+                            </ul>
+                          </li>
+                        {% else %}
+                          <li><a href="{%url 'rabbit:login'%}"> login </a></li>
+                        {% endif %}           
                       </ul>
-                    </nav><!-- #nav-menu-container -->
-                    {% endblock nav %}		    		
+                    </nav><!-- #nav-menu-container -->	    		
                   </div>
               </div>
             </header><!-- #header -->
@@ -168,5 +183,7 @@
           <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>							
           <script src="{% static 'js/mail-script.js' %}"></script>	
           <script src="{% static 'js/main.js' %}"></script>	
+          {% block scriptlink %}
+          {% endblock scriptlink %}
       </body>
   </html>
