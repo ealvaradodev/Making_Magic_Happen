@@ -49,4 +49,9 @@ should work if not use:
 
 
       pip install --only-binary :all: mysqlclient
+      
+# Create a admin login:
+
+     python manage.py createsuperuser 
+
 
