@@ -1,5 +1,6 @@
 {% extends 'rabbit/base.html' %}
 {% block content %}
+{% load staticfiles %}
 <section class="banner-area relative" id="home">
     <div class="container">
         <div class="overlay overlay-bg"></div>
@@ -19,13 +20,17 @@
 </section>
 <!-- End banner Area -->
 
+
 <!-- Start image-carusel Area -->
 <section class="image-carusel-area">
     <div class="container">
         <div class="row">
             <div class="active-image-carusel">
                 <div class="single-image-carusel">
-                    <img class="img-fluid" src="img/c1.jpg" alt="">
+                         
+                        <img style="width: 245px; height: 247px;"
+alt="Image description"
+ src="{% static 'img/c2.jpg' %}"/>
                 </div>
                 <div class="single-image-carusel">
                     <img class="img-fluid" src="img/c2.jpg" alt="">
