@@ -10,3 +10,6 @@ def home(request):
 
 def login(request):
     return render(request,'rabbit/login.html')
+
+def calendar(request):
+    return render(request, 'rabbit/calendar.html')

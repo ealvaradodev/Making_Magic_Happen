@@ -62,7 +62,15 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: #545A5C; }
+      border-radius: 5%;
+      background: white; }
+    .calendar .close{
+      right: 0;
+      top: 0px;
+      margin-top: 10px;
+      margin-right: 10px;
+    }
+
     .calendar .filler {
       position: absolute;
       width: 0;
