@@ -2445,11 +2445,13 @@ body.mobile-nav-active #mobile-nav-toggle {
 @media (max-width: 414px) {
   .image-carusel-area .active-tstimonial-carusel {
     padding: 30px;
+    
   }
 }
 
 .image-carusel-area .single-image-carusel {
   background-color: #000;
+  
 }
 
 .image-carusel-area .single-image-carusel img {
