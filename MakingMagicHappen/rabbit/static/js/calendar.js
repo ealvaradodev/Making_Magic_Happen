@@ -1,16 +1,14 @@
+
 // the semi-colon before function invocation is a safety net against concatenated
 // scripts and/or other plugins which may not be closed properly.
 ;(function ( $, window, document, undefined ) {
-
+    
 	"use strict";
-
     // Create the defaults once
     var pluginName = "simpleCalendar",
         defaults = {
             months: ['january','february','march','april','may','june','july','august','september','october','november','december'], //string of months starting from january
             days: ['sunday','monday','tuesday','wenesday','thursday','friday','saturday'], //string of days starting from sunday
-            minDate : "YYYY-MM-DD", // minimum date
-            maxDate : "YYYY-MM-DD", // maximum date
             insertEvent: true, // can insert events
             displayEvent: true, // display existing event
             fixedStartDay: true, // Week begin always by monday
@@ -27,25 +25,23 @@
         this.currentDate = new Date();
         this.init();
     }
+    function updateYear(year){
+        return year;
+    }
 
     // Avoid Plugin.prototype conflicts
     $.extend(Plugin.prototype, {
         init: function () {
             var container = $(this.element);
             var todayDate = this.currentDate;
-            
             var calendar = $('<div class="calendar"></div>');
             var header = $('<header>'+
-                             todayDate.getFullYear +
                            '<h2 class="month"></h2>'+
-                           '<a class="btn btn-prev" href="#"><</a>'+
-                           '<a class="btn btn-next" href="#">></a>'+
+                           '<a class="btn btn-prev" href="#" style="margin-top: 10px; margin-left:10px; padding: 0px 0 10px 0;"><i class="fa fa-angle-left" ></i></a>'+
+                           '<a class="btn btn-next" href="#" style="margin-top: 10px; margin-right:10px; padding: 0px 0 10px 0;"><i class="fa fa-angle-right"></i></a>'+
 				            '</header>');
             
             this.updateHeader(todayDate,header);
-            calendar.append(header);
-
-            this.updateHeaderYear(todayDate,header);
             calendar.append(header);
             
             this.buildCalendar(todayDate,calendar);
@@ -56,11 +52,7 @@
         
         //Update the current month header
         updateHeader: function (date, header) {
-            header.find('.month').html(this.settings.months[date.getMonth()]);
-        },
-        // Update the current year header
-        updateHeaderYear: function (date, header) {
-            header.find('.year').html(this.settings[date.getFullYear()]);
+            header.find('.month').html(date.getFullYear() + '    '+this.settings.months[date.getMonth()]);
         },
         //Build calendar of a month from date
         buildCalendar: function (fromDate, calendar) {
@@ -121,10 +113,14 @@
             body.append(thead);
             body.append(tbody);
             
-            var eventContainer = $('<div class="event-container"></div>');
+            var eventContainer = $('<div class="event-container"><a class="close" aria-hidden="true" style="align:right"> X </a>'+
+                                                 '</div>');
             
             calendar.append(body);
             calendar.append(eventContainer);
+            if(logged){
+                eventContainer.append('<p> this is the test </p>')
+            }
         },
         //Init global events listeners
         bindEvents: function () {
@@ -135,6 +131,7 @@
                 plugin.currentDate.setMonth(plugin.currentDate.getMonth()-1);
                 plugin.buildCalendar(plugin.currentDate, $('.calendar'));
                 plugin.updateHeader(plugin.currentDate, $('.calendar header'));
+                
             });
             
             //Click next month
@@ -142,6 +139,7 @@
                 plugin.currentDate.setMonth(plugin.currentDate.getMonth()+1);
                 plugin.buildCalendar(plugin.currentDate, $('.calendar'));
                 plugin.updateHeader(plugin.currentDate, $('.calendar header'));
+                
             });
         },
         //Small effect to fillup a container
@@ -162,6 +160,10 @@
                 $('.event-container').show();
                 filler.hide();
             });
+            $('.close').click(function(){
+                $('.event-container').hide();
+            });
+            
         },
         //Small effect to empty a container
         empty : function (elem,x,y){
@@ -193,5 +195,9 @@
                 }
         });
     };
-
 })( jQuery, window, document );
+var logged = false;
+function is_authenticate(logg){
+    console.log(logged)
+    logged = logg;
+}

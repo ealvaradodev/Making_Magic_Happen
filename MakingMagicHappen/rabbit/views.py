@@ -1,7 +1,6 @@
 from django.shortcuts import render_to_response, render
 from django.views import generic
 from django.contrib.auth.models import User
-
 from django.views.generic import FormView, TemplateView
 
 
@@ -11,3 +10,6 @@ def home(request):
 
 def login(request):
     return render(request,'rabbit/login.html')
+
+def calendar(request):
+    return render(request, 'rabbit/calendar.html')

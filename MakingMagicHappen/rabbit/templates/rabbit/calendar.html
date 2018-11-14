@@ -11,7 +11,8 @@
                 <div class="overlay overlay-bg"></div>
                 <div class="row fullscreen d-flex align-items-center justify-content-start">
                     <div class="banner-content col-lg-13 col-md-9">
-                            <div id="container" class="calendar-container" style="background-color: white; border-radius: 5%;"></div>
+                            <div id="container" class="calendar-container" style="background-color: white; border-radius: 5%; height: 450px; width: 650px">
+                            </div>
                             </div>
                     </div>											
                 </div>
@@ -23,7 +24,7 @@
     
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <script src="{% static 'js/calendar.js'%}"></script>
-    <script>
+    <script language="javascript">
         $(document).ready(function(){
             $("#container").simpleCalendar({
                 fixedStartDay: false,
@@ -38,5 +39,6 @@
         insertCallback : function(){} // Callback when an event is added to the calendar
             });
         });
+        is_authenticate("{{ user.is_authenticated|yesno:"true,false"}}");
 </script> 
     {% endblock scriptlink %}
