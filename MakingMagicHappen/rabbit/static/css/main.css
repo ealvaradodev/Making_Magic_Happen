@@ -2326,9 +2326,9 @@ body.mobile-nav-active #mobile-nav-toggle {
   top: 0;
   bottom: 0;
 }
-
+/*rabbit background banner need nice image for this*/
 .banner-area {
-  background: url(../img/banner-bg.jpg) center;
+  background: url(../img/rabt7.jpg) center;
   background-size: cover;
 }
 
@@ -2564,9 +2564,9 @@ body.mobile-nav-active #mobile-nav-toggle {
 .about-video-left .primary-btn {
   border-radius: 0;
 }
-
+/*rabbit video*/
 .about-video-right {
-  background: url(../img/video-bg.jpg) no-repeat center;
+  background: url(../img/rabt1.jpg) no-repeat center;
   background-size: cover;
   height: 330px;
 }

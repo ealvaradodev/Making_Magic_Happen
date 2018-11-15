@@ -12,7 +12,7 @@ urlpatterns = [
     url(r'^login/$', auth_views.login, {'template_name': 'rabbit/login.html'}, name='login'),
     url(r'^adopt/$', TemplateView.as_view(template_name='rabbit/adopt.html'), name='adopt'),
     url(r'^contact/$', TemplateView.as_view(template_name='rabbit/contact.html'), name='contact'),
-    #url(r'^rabbits/$', TemplateView.as_view(template_name='rabbit/rabbits.html'), name='rabbits'),
+    url(r'^rabbits/$', TemplateView.as_view(template_name='rabbit/rabbits.html'), name='rabbits'),
     #url(r'^guinea-pigs/$', TemplateView.as_view(template_name='rabbit/guinea-pigs.html'), name='guinea-pigs'),
     #url(r'^care-info/$', TemplateView.as_view(template_name='rabbit/care-info.html'), name='care-info'),
 ]
