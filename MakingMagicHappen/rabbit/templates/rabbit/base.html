@@ -40,15 +40,15 @@
                         <li class="menu-active"><a href="{%url 'rabbit:home'%}">Home</a></li>
                         <li><a href="#">About Us</a></li>
                         <li><a href="#">Volunteer</a></li>
-                        
+                        <li><a href="{%url 'rabbit:donate'%}">Donate</a></li>
                         <li><a href="{% url 'rabbit:calendar'%}">Calendar</a></li>
-                        <li><a href="#">Volunteer</a></li>
+                       
                          <li class="menu-has-children"><a href="{% url 'rabbit:adopt'%}">Adopt</a>
                           <ul>
                             <li><a href="{%url 'rabbit:rabbits'%}">Rabbits</a></li>
                             <li><a href="#">Guniea Pigs</a></li>
                           </ul>
-                        </li>						           -->
+                        </li>						           
                         <li><a href="{%url 'rabbit:contact'%}">Contact</a></li>
                         <!-- <li class="menu-has-children"><a href="">Dropdown</a>
                           <ul>
@@ -85,6 +85,30 @@
             </header><!-- #header -->
             {% block content %}
             {% endblock %}
+<!-- Start calltoaction Area -->
+<section class="calltoaction-area section-gap relative">
+    <div class="container">
+        <div class="overlay overlay-bg"></div>						
+        <div class="row align-items-center justify-content-center">
+            <h1 class="text-white">Want to help? Become a Volunteer!</h1>
+            <br><br>
+            <p class="text-white">
+               Learn more about how you can help the rabbits at Magic Happens Rabbit Rescue today and learn how you can help make
+               every rabbit's day a little bit brighter!
+            </p>
+            <br>
+            <div class="buttons d-flex flex-row">
+                
+                <!--TODO: ADD LINK TO VOLUNTEER -->
+                <a href="#" class="primary-btn text-uppercase">Register!</a>
+                <a href="#" class="primary-btn text-uppercase">Learn More</a>
+            </div>
+        </div>
+    </div>	
+</section>
+<!-- End calltoaction Area -->
+
+
             <footer class="footer-area">
                 <div class="container">
                     <div class="row pt-120 pb-80">
