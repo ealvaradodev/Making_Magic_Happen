@@ -52,6 +52,11 @@ should work if not use:
       
 # Create a admin login:
 
-     python manage.py createsuperuser 
+     python .\manage.py migrate
+
+     python .\manage.py createsuperuser 
+     
+ Add a username, email, and password to the database.
+     
 
 
