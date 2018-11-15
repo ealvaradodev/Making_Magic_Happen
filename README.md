@@ -49,4 +49,14 @@ should work if not use:
 
 
       pip install --only-binary :all: mysqlclient
+      
+# Create a admin login:
+
+     python .\manage.py migrate
+
+     python .\manage.py createsuperuser 
+     
+ Add a username, email, and password to the database.
+     
+
 
