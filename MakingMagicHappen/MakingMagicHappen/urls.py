@@ -16,12 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic.base import TemplateView
-from django.contrib.auth import views as auth_views
+from django.contrib.auth.views import LoginView, LogoutView
 
 urlpatterns = [
 	path('', include('rabbit.urls')),
     path(r'^home/$', TemplateView.as_view(template_name='rabbit/home.html'), name='home'),	
-	path(r'^login/$', auth_views.login, {'template_name': 'rabbit/login.html'}, name='login'),
-     path(r'^admin/', admin.site.urls),
-	path(r'logout/', auth_views.LogoutView.as_view(), name='logout'),
+	path(r'^login/$', LoginView.as_view(template_name = 'rabbit/login.html'), name='login'),
+    path(r'^admin/', admin.site.urls),
+	path(r'logout/', LogoutView.as_view(), name='logout'),
 ]
