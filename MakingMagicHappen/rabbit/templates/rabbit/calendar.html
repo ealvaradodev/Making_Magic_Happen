@@ -26,19 +26,8 @@
     <script src="{% static 'js/calendar.js'%}"></script>
     <script language="javascript">
         $(document).ready(function(){
-            $("#container").simpleCalendar({
-                fixedStartDay: false,
-        months: ['january','february','march','april','may','june','july','august','september','october','november','december'], //string of months starting from january
-        days: ['sunday','monday','tuesday','wenesday','thursday','friday','saturday'], //string of days starting from sunday
-        minDate : "YYYY-MM-DD", // minimum date
-        maxDate : "YYYY-MM-DD", // maximum date
-        insertEvent: true, // can insert events
-        displayEvent: true, // display existing event
-        fixedStartDay: true, // Week begin always by monday
-        event: [], //List of event
-        insertCallback : function(){} // Callback when an event is added to the calendar
-            });
+           var calendar = $("#container").simpleCalendar();
         });
-        is_authenticate("{{ user.is_authenticated|yesno:"true,false"}}");
-</script> 
+        is_authenticate("{{ user.is_authenticated|yesno:"1,0"}}");
+        </script> 
     {% endblock scriptlink %}

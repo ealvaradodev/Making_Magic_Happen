@@ -2442,14 +2442,16 @@ body.mobile-nav-active #mobile-nav-toggle {
   background: #fab700;
 }
 
-@media (max-width: 414px) {
+@media (max-width: 125px) {
   .image-carusel-area .active-tstimonial-carusel {
     padding: 30px;
+    
   }
 }
 
 .image-carusel-area .single-image-carusel {
   background-color: #000;
+  
 }
 
 .image-carusel-area .single-image-carusel img {
@@ -2458,6 +2460,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
+  
 }
 
 .image-carusel-area .single-image-carusel img:hover {

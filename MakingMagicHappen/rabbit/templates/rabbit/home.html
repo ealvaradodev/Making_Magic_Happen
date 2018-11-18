@@ -1,5 +1,6 @@
 {% extends 'rabbit/base.html' %}
 {% block content %}
+{% load static %}
 <section class="banner-area relative" id="home">
     <div class="container">
         <div class="overlay overlay-bg"></div>
@@ -12,53 +13,55 @@
                 <p class="text-white sub-head">
                     
                 </p>
-                <a href="#" class="primary-btn header-btn text-uppercase">Find a forever friend</a>
+                <a href="{%url 'rabbit:rabbits'%}" class="primary-btn header-btn text-uppercase">Find a forever friend</a>
             </div>											
         </div>
     </div>
 </section>
 <!-- End banner Area -->
 
+
 <!-- Start image-carusel Area -->
 <section class="image-carusel-area">
     <div class="container">
         <div class="row">
             <div class="active-image-carusel">
-                <div class="single-image-carusel">
-                    <img class="img-fluid" src="img/c1.jpg" alt="">
+                <div class="single-image-carusel">     <!--img style="width: 125px; height:-->      
+                        <img alt="bun1"src="{% static 'img/rabt1.jpg' %}"/>
                 </div>
                 <div class="single-image-carusel">
-                    <img class="img-fluid" src="img/c2.jpg" alt="">
+                    <img alt="Image description" src="{% static 'img/rabt2.jpg' %}"/>
                 </div>
                 <div class="single-image-carusel">
-                    <img class="img-fluid" src="img/c3.jpg" alt="">
+                    <img alt="Image description" src="{% static 'img/rabt3.jpg' %}"/>
                 </div>
                 <div class="single-image-carusel">
-                    <img class="img-fluid" src="img/c4.jpg" alt="">
+                
+                    <img  alt="Image description"src="{% static 'img/rabt4.jpg' %}"/>
                 </div>	
                 <div class="single-image-carusel">
-                    <img class="img-fluid" src="img/c1.jpg" alt="">
+                        <img  alt="Image description"src="{% static 'img/rabt4.jpg' %}"/>
                 </div>
                 <div class="single-image-carusel">
-                    <img class="img-fluid" src="img/c2.jpg" alt="">
+                        <img  alt="Image description"src="{% static 'img/rabt4.jpg' %}"/>
                 </div>
                 <div class="single-image-carusel">
-                    <img class="img-fluid" src="img/c3.jpg" alt="">
+                        <img  alt="Image description"src="{% static 'img/rabt4.jpg' %}"/>
                 </div>
                 <div class="single-image-carusel">
-                    <img class="img-fluid" src="img/c4.jpg" alt="">
+                        <img  alt="Image description"src="{% static 'img/rabt4.jpg' %}"/>
                 </div>
                 <div class="single-image-carusel">
-                    <img class="img-fluid" src="img/c1.jpg" alt="">
+                        <img  alt="Image description"src="{% static 'img/rabt4.jpg' %}"/>
                 </div>
                 <div class="single-image-carusel">
-                    <img class="img-fluid" src="img/c2.jpg" alt="">
+                        <img  alt="Image description"src="{% static 'img/rabt4.jpg' %}"/>
                 </div>
                 <div class="single-image-carusel">
-                    <img class="img-fluid" src="img/c3.jpg" alt="">
+                        <img  alt="Image description"src="{% static 'img/rabt4.jpg' %}"/>
                 </div>
                 <div class="single-image-carusel">
-                    <img class="img-fluid" src="img/c4.jpg" alt="">
+                        <img  alt="Image description"src="{% static 'img/rabt4.jpg' %}"/>
                 </div>															
             </div>
         </div>
@@ -313,14 +316,18 @@
     <div class="container">
         <div class="overlay overlay-bg"></div>						
         <div class="row align-items-center justify-content-center">
-            <h1 class="text-white">Want to help? Become a Volunteer</h1>
+            <h1 class="text-white">Want to help? Become a Volunteer!</h1>
+            <br><br>
             <p class="text-white">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 Ut enim ad minim. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
             </p>
+            <br>
             <div class="buttons d-flex flex-row">
-                <a href="#" class="primary-btn text-uppercase">View pdf details</a>
-                <a href="#" class="primary-btn text-uppercase">Register now</a>
+                
+                <!--TODO: ADD LINK TO VOLUNTEER -->
+                <a href="#" class="primary-btn text-uppercase">Read More</a>
+                <a href="#" class="primary-btn text-uppercase">Read More</a>
             </div>
         </div>
     </div>	

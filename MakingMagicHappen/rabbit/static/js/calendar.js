@@ -1,6 +1,5 @@
 
-// the semi-colon before function invocation is a safety net against concatenated
-// scripts and/or other plugins which may not be closed properly.
+   
 ;(function ( $, window, document, undefined ) {
     
 	"use strict";
@@ -9,7 +8,7 @@
         defaults = {
             months: ['january','february','march','april','may','june','july','august','september','october','november','december'], //string of months starting from january
             days: ['sunday','monday','tuesday','wenesday','thursday','friday','saturday'], //string of days starting from sunday
-            insertEvent: true, // can insert events
+            insertEvent: false, // can insert events
             displayEvent: true, // display existing event
             fixedStartDay: true, // Week begin always by monday
             event: [], //List of event
@@ -24,9 +23,6 @@
         this._name = pluginName;
         this.currentDate = new Date();
         this.init();
-    }
-    function updateYear(year){
-        return year;
     }
 
     // Avoid Plugin.prototype conflicts
@@ -98,28 +94,57 @@
                     //if day is not in this month
                     if(day.getMonth() != fromDate.getMonth()){
                        td.find(".day").addClass("wrong-month"); 
-                    }
-                    //Binding day event
-                    td.on('click', function(e) {
-                        plugin.fillUp($(plugin.element),e.pageX,e.pageY);
-                    });
-                    
+                    } 
                     tr.append(td);
                     day.setDate(day.getDate() + 1);
                 }
                 tbody.append(tr);
             }
-            
             body.append(thead);
             body.append(tbody);
             
             var eventContainer = $('<div class="event-container"><a class="close" aria-hidden="true" style="align:right"> X </a>'+
                                                  '</div>');
-            
+
+            //event creation form
+            // var eventCreation = $('<>')
+           var modal = ('<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">' +
+                        '<div class="modal-dialog" role="document">' +
+                        '<div class="modal-content">' +
+                        '<div class="modal-header">'+
+                        '<h5 class="modal-title" id="exampleModalLabel">New message</h5>'+
+                        '<button type="button" class="close" data-dismiss="modal" aria-label="Close">'+
+                        '<span aria-hidden="true">&times;</span>'+
+                        '</button>'+
+                        '</div>'+
+                        '<div class="modal-body">'+
+                        '<form>'+
+                        '<div class="form-group">'+
+                        '<label for="recipient-name" class="col-form-label">Recipient:</label>'+
+                        '<input type="text" class="form-control" id="recipient-name">'+
+                        '</div>'+
+                        '<div class="form-group">'+
+                        '<label for="message-text" class="col-form-label">Message:</label>'+
+                        '<textarea class="form-control" id="message-text"></textarea>'+
+                        '</div>'+
+                        '</form>'+
+                        '</div>'+
+                        '<div class="modal-footer">'+
+                        '<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>'+
+                        '<button type="button" class="btn btn-primary">Send message</button>'+
+                        '</div>'+
+                        '</div>'+
+                        '</div>'+
+                        '</div>')
             calendar.append(body);
             calendar.append(eventContainer);
-            if(logged){
-                eventContainer.append('<p> this is the test </p>')
+            if(logged == 1){
+                // eventContainer.append(form);
+               
+            }
+            else{
+                eventContainer.append('<div class="event"> I am  not logged in </div>');
+
             }
         },
         //Init global events listeners
@@ -141,48 +166,10 @@
                 plugin.updateHeader(plugin.currentDate, $('.calendar header'));
                 
             });
-        },
-        //Small effect to fillup a container
-        fillUp : function (elem,x,y){
-            var plugin = this;
-            var elemOffset = elem.offset();
-            
-            var filler = $('<div class="filler" style=""></div>');
-            filler.css("left", x-elemOffset.left);
-            filler.css("top", y-elemOffset.top);
-            
-            $('.calendar').append(filler);
-            
-            filler.animate({
-                width: "300%",
-                height: "300%"
-            }, 500, function() {                
-                $('.event-container').show();
-                filler.hide();
-            });
-            $('.close').click(function(){
-                $('.event-container').hide();
-            });
-            
-        },
-        //Small effect to empty a container
-        empty : function (elem,x,y){
-            var elemOffset = elem.offset();
-            
-            var filler = $('.filler');
-            filler.css("width", "300%");
-            filler.css("height", "300%");
-            
-            filler.show();
-            
-            $('.event-container').hide();
-            
-            filler.animate({
-                width: "0%",
-                height: "0%"
-            }, 500, function() {
-                filler.remove();
-            });
+
+            $('.td').click(function(){
+                modal.open();
+            })
         }
     });
 
@@ -196,8 +183,8 @@
         });
     };
 })( jQuery, window, document );
-var logged = false;
+var logged = 0;
 function is_authenticate(logg){
-    console.log(logged)
-    logged = logg;
+        logged = logg;
+        insertEvent= true;
 }
