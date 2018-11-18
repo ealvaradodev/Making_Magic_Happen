@@ -32,7 +32,7 @@
             var todayDate = this.currentDate;
             var calendar = $('<div class="calendar"></div>');
             var header = $('<header>'+
-                           '<h2 class="month"></h2>'+
+                           '<h4 class="month"></h4>'+
                            '<a class="btn btn-prev" href="#" style="margin-top: 10px; margin-left:10px; padding: 0px 0 10px 0;"><i class="fa fa-angle-left" ></i></a>'+
                            '<a class="btn btn-next" href="#" style="margin-top: 10px; margin-right:10px; padding: 0px 0 10px 0;"><i class="fa fa-angle-right"></i></a>'+
 				            '</header>');

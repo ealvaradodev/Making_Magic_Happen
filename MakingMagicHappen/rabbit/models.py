@@ -1,5 +1,4 @@
 from django.db import models
-<<<<<<< HEAD
 from django.conf import settings
 
 # Create your models here.
@@ -10,7 +9,6 @@ class calendarEvent(models.Model):
     event_time = models.TimeField((u"event Time"), auto_now_add=True, blank=True)
     event_location = models.CharField(max_length = 1000, null= False)
 
-=======
 #from django.contrib.auth.models import User
 #from PIL import Image
 
@@ -36,4 +34,3 @@ class calendarEvent(models.Model):
 #   purdate = models.DateTimeField("purchase-date")
 #    deldate = models.DateTimeField("delivary-date")
 #end of stuff to add images
->>>>>>> f254549c67e7c115b7fa609e33952fd7d39fd353

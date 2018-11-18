@@ -68,7 +68,7 @@
       right: 0;
       top: 0px;
       margin-top: 10px;
-      margin-right: 10px;
+      margin-right: 10px;f
     }
 
     .calendar .filler {
@@ -81,7 +81,7 @@
 
     .calendar-container{
         position: relative;
-        margin: 50px auto;
+        margin: 40px auto;
         max-width: 600px;
         background-color: white;
     }
