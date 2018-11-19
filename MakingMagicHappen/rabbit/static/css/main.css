@@ -2708,7 +2708,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   background: #fab700;
 }
 
-@media (max-width: 414px) {
+@media (max-width: 500px) {
   .testomial-area .active-tstimonial-carusel {
     padding: 30px;
   }
