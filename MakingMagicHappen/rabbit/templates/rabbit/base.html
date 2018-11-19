@@ -63,7 +63,7 @@
                         </li>	 -->
                         {% if user.is_authenticated %}
                           {% if user.is_superuser%}
-                            <li><a href="#"> Register User </a></li>
+                            <li><a href="{% url 'rabbit:register' %}"> Register User </a></li>
                           {% endif %}
                           <li><a href="#"> Rabbit Submission Form</a></li>
                           <li class = "menu-has-children"><a href="{% url 'rabbit:home'%}">{{user.username}} </a>

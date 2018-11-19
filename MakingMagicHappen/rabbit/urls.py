@@ -1,7 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import url
-from . import views
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.decorators import login_required
 from django.views.generic.base import TemplateView
@@ -14,5 +13,7 @@ urlpatterns = [
     url(r'^adopt/$', TemplateView.as_view(template_name='rabbit/adopt.html'), name='adopt'),
     url(r'^contact/$', TemplateView.as_view(template_name='rabbit/contact.html'), name='contact'),
     url(r'^calendar/$', TemplateView.as_view(template_name='rabbit/calendar.html'), name='calendar'),
+    url(r'^register/$', TemplateView.as_view(template_name='rabbit/register.html'), name='register'),
+ #   path('signup/', views.SignUp.as_view(), name='signup'),
 ]
 

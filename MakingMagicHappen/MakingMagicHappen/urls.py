@@ -24,4 +24,5 @@ urlpatterns = [
 	path(r'^login/$', LoginView.as_view(template_name = 'rabbit/login.html'), name='login'),
     path(r'^admin/', admin.site.urls),
 	path(r'logout/', LogoutView.as_view(), name='logout'),
+   # path('users/', include('django.contrib.auth.urls')),
 ]
