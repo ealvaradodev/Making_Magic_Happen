@@ -2,7 +2,6 @@
     {% load static %}
     {% block csslink %}
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <link href="{% static 'css/calendar.css' %}" rel="stylesheet" id="bootstrap-css">
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.1.min.js">
     </script>
@@ -130,7 +129,7 @@
                 id: 999,
                 title: 'Repeating Event',
                 start: new Date(y, m, d+4, 16, 0),
-                allDay: false,
+                allDay: true,
                 className: 'info'
             },
             {
