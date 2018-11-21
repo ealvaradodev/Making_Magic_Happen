@@ -38,7 +38,14 @@ xampp:
 inside the folder Making_Magic_Happen/makingMagicHappen (in cmd) 
 
           python manage.py runserver
-   
+          
+Hi, this is Elise. In my case, I had some issues and will be testing migration, as im having some issues here:
+http://prntscr.com/lkz0r0
+so I will be migrating it on my system, my command is
+
+          python manage.py migrate
+
+
 (might need to install mysqlclient):
 
 
