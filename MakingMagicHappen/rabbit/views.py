@@ -3,7 +3,7 @@ from django.views import generic
 from django.contrib.auth.models import User
 from django.views.generic import FormView, TemplateView
 from django.http import JsonResponse, HttpResponseRedirect
-from .forms import modelUser
+from rabbit.forms import newUser
 
 # Create your views here.
 def home(request):
@@ -24,12 +24,15 @@ def validate_username(request):
 
 
 def register(request):
+    form = newUser()
     if request.method == 'POST':
         form = modelUser(request.POST)
         if form.is_valid():
-            return HttpResponseRedirect('/thanks')
-    else:
-        form = modelUser()
+            print(form.cleaned_data)
+            newUser = User(**form.cleaned_data)
+            newUser.save()
+        else:
+            print(form.errors)
     context = {
         "form" : form
     }
