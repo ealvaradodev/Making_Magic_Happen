@@ -9,7 +9,7 @@ app_name = 'rabbit'
 
 urlpatterns = [
 	url(r'^$', TemplateView.as_view(template_name='rabbit/home.html'), name='home'),
-    url(r'^login/$', auth_views.LoginView, {'template_name': 'rabbit/login.html'}, name='login'),
+    url(r'^login/$', auth_views.LoginView.as_view(template_name = 'rabbit/login.html'), name='login'),
     url(r'^adopt/$', TemplateView.as_view(template_name='rabbit/adopt.html'), name='adopt'),
     url(r'^contact/$', TemplateView.as_view(template_name='rabbit/contact.html'), name='contact'),
     url(r'^rabbits/$', TemplateView.as_view(template_name='rabbit/rabbits.html'), name='rabbits'),
