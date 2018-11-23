@@ -5,10 +5,8 @@
     <section class="banner-area relative" id="home"> 
             <div class="container"> 
                 <div class="overlay overlay-bg"></div> 
-                <div class="row fullscreen d-flex align-items-center justify-content-start"> 
-                    <p> Testing testing</p>	 
-                    		 
-                    <form action = "." method = "POST"> 
+                <div class="row fullscreen d-flex align-items-center justify-content-start">	 
+                    <form action = "" method = "POST"> 
                         {% csrf_token %} 
                         {{ form.as_p }} 
                         <button type="submit">Sign up</button> 

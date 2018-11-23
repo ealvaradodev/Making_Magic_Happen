@@ -36,4 +36,4 @@ def register(request):
     context = {
         "form" : form
     }
-    return render(request, 'rabbit/register.html', context)
+    return render(request, 'rabbit/register.html', {'form': form})
