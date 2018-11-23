@@ -18,6 +18,7 @@ urlpatterns = [
     #url(r'^guinea-pigs/$', TemplateView.as_view(template_name='rabbit/guinea-pigs.html'), name='guinea-pigs'),
     #url(r'^care-info/$', TemplateView.as_view(template_name='rabbit/care-info.html'), name='care-info'),
     url(r'^calendar/$', TemplateView.as_view(template_name='rabbit/calendar.html'), name='calendar'),
-    url(r'^register/$', CreateView.as_view(template_name='rabbit/register.html',form_class=UserCreationForm, success_url='/'),name='register'),
+    url(r'^register/$', CreateView.as_view(template_name='rabbit/register.html',form_class=UserCreationForm, success_url='/')),
+    url('post/new/', views.register, name='register'),
 ]
 
