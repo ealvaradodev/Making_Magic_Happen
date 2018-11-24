@@ -1,0 +1,110 @@
+/*stylesheet*/
+body {
+    font-family: Tahoma, Geneva, sans-serif;
+    background: url(../img/rabt7.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    /*border: 1px solid #ccc;
+    box-sizing: border-box; */
+    margin: 0;
+    padding: 5px 10px;
+    border:0;
+     
+    
+}
+
+/* Set a style for all buttons */
+button {
+    
+    width: 100%;
+    font-size: 14px;
+    padding: 14px 20px;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin: 8px 0;
+    outline: 0;
+    cursor: pointer;
+    letter-spacing: 1px; 
+    color: white;
+    background-color: #2ecc71;
+      
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+
+.container {
+     padding: 16px;
+     width: 100%;
+     font-style: bold;
+     font-size: 12px;
+     font-weight: 400;
+     border: 0; 
+     letter-spacing: 1px;
+     background: 0;
+  
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+   display: none; /*Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    padding-top: 60px; 
+}
+
+/* Modal Content/Box */
+.modal-content {
+    top:0;
+    width: 20%; /* Could be more or less, depending on screen size */
+}
+
+*/
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
