@@ -39,9 +39,7 @@
                     <nav id="nav-menu-container">
                       <ul class="nav-menu">
                         <li class="menu-active"><a href="{%url 'rabbit:home'%}">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Volunteer</a></li>
-                        
+                        <li><a href="{%url 'rabbit:about' %}">About Us</a></li>                        
                         <li><a href="{% url 'rabbit:calendar'%}">Calendar</a></li>
                         <li><a href="#">Volunteer</a></li>
                          <li class="menu-has-children"><a href="{% url 'rabbit:adopt'%}">Adopt</a>
@@ -66,8 +64,11 @@
                           </li>
                         {% else %}
                           <li><a href="{%url 'rabbit:login'%}"> login </a></li>
-                        {% endif %}           
+                        {% endif %} 
+                        <li><button type="button" class="btn btn-success"><a href="https://www.paypal.com/donate/?token=0uuolZ5xysEBHJP9WRqXaT_bBOYugJWuiIX9Ytygm36J8mL7D_2jVOxJluVKxZxl5eWsEG&country.x=US&locale.x=US" class="donate">DONATE</a><i class="fa fa-heart" aria-hidden="true"></i></button></li>
                       </ul>
+                      
+                    
                     </nav><!-- #nav-menu-container -->	    		
                   </div>
               </div>
@@ -170,10 +171,12 @@
           <script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
           <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>	
           <script src="{% static 'js/owl.carousel.min.js' %}"></script>						
-          <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>							
-          <script src="{% static 'js/mail-script.js' %}"></script>	
+          <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>	
           <script src="{% static 'js/main.js' %}"></script>	
           {% block scriptlink %}
           {% endblock scriptlink %}
+
+          {% block ajax %}
+          {% endblock %}
       </body>
   </html>

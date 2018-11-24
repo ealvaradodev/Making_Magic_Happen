@@ -2040,7 +2040,6 @@ h1, h2, h3, h4, h5, h6 {
   min-width: 180px;
   text-align: left;
 }
-
 /* Nav Menu Arrows */
 .sf-arrows .sf-with-ul {
   padding-right: 30px;
@@ -2326,7 +2325,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   top: 0;
   bottom: 0;
 }
-
+/*rabbit background banner need nice image for this*/
 .banner-area {
   background: url(../img/rabt7.jpg) center;
   background-size: cover;
@@ -2445,11 +2444,13 @@ body.mobile-nav-active #mobile-nav-toggle {
 @media (max-width: 414px) {
   .image-carusel-area .active-tstimonial-carusel {
     padding: 30px;
+    
   }
 }
 
 .image-carusel-area .single-image-carusel {
   background-color: #000;
+  
 }
 
 .image-carusel-area .single-image-carusel img {
@@ -2562,9 +2563,9 @@ body.mobile-nav-active #mobile-nav-toggle {
 .about-video-left .primary-btn {
   border-radius: 0;
 }
-
+/*rabbit video*/
 .about-video-right {
-  background: url(../img/video-bg.jpg) no-repeat center;
+  background: url(../img/rabt1.jpg) no-repeat center;
   background-size: cover;
   height: 330px;
 }

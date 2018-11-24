@@ -1,1 +1,90 @@
 {% extends 'rabbit/base.html' %}
+{% block content %}
+<section class="banner-area relative" id="home">
+        <div class="container">
+            <div class="overlay overlay-bg"></div>
+            <div class="row fullscreen d-flex align-items-center justify-content-start">
+                <div class="banner-content col-lg-8 col-md-12">
+                    <h1 class="text-uppercase">
+                        Adopt Us. <br>
+                        We need your help.
+                            
+                    </h1>
+                    <p class="text-white sub-head">
+                        
+                    </p>
+                    <a href="{%url 'rabbit:rabbits'%}" class="primary-btn header-btn text-uppercase">Find a forever friend</a>
+                </div>											
+            </div>
+        </div>
+    </section>
+    <!-- End banner Area -->
+<!-- Start contact-page Area -->
+<section class="contact-page-area section-gap">
+        <div class="container">
+            <div class="row">
+                <div class="map-wrap" style="width:100%; height: 445px;" id="map"></div>
+                <div class="col-lg-4 d-flex flex-column address-wrap">
+                    <div class="single-contact-address d-flex flex-row">
+                        <div class="icon">
+                            <span class="lnr lnr-home"></span>
+                        </div>
+                        <div class="contact-details">
+                            <h5>Binghamton, New York</h5>
+                            <p>4343 Hinkle Deegan Lake Road</p>
+                        </div>
+                    </div>
+                    <div class="single-contact-address d-flex flex-row">
+                        <div class="icon">
+                            <span class="lnr lnr-phone-handset"></span>
+                        </div>
+                        <div class="contact-details">
+                            <h5>00 (953) 9865 562</h5>
+                            <p>Mon to Fri 9am to 6 pm</p>
+                        </div>
+                    </div>
+                    <div class="single-contact-address d-flex flex-row">
+                        <div class="icon">
+                            <span class="lnr lnr-envelope"></span>
+                        </div>
+                        <div class="contact-details">
+                            <h5>support@colorlib.com</h5>
+                            <p>Send us your query anytime!</p>
+                        </div>
+                    </div>														
+                </div>
+                <div class="col-lg-8">
+                        <h1>Contact Us</h1>
+                        <form method="post">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <div class="form-actions">
+                              <button type="submit">Send</button>
+                            </div>
+                        </form>
+                    
+                </div>
+            </div>
+        </div>	
+    </section>
+    <!-- End contact-page Area -->
+{% endblock %}
+{% block scriptlink %}
+<script>
+    // Initialize and add the map
+function initMap() {
+  // The location of MagicHappen
+  var magicHappen = {lat: -25.344, lng: 131.036};
+  // The map, centered at MagicHappen
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 4, center: magicHappen});
+  // The marker, positioned at MagicHappen
+  var marker = new google.maps.Marker({position: magicHappen, map: map});
+}
+    
+</script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBouzPQynzUBD5HjeMPG3h0DJPzwEkD7Og&callback=initMap">
+</script>
+{% endblock scriptlink %}
+
