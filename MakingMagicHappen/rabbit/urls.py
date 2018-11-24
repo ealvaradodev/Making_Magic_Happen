@@ -11,6 +11,7 @@ app_name = 'rabbit'
 
 urlpatterns = [
 	url(r'^$', TemplateView.as_view(template_name='rabbit/home.html'), name='home'),
+    url(r'^about/$', TemplateView.as_view(template_name='rabbit/aboutUs.html'), name='about'),
     url(r'^login/$', auth_views.LoginView.as_view(template_name = 'rabbit/login.html'), name='login'),
     url(r'^adopt/$', TemplateView.as_view(template_name='rabbit/adopt.html'), name='adopt'),
     url(r'^contact/$', TemplateView.as_view(template_name='rabbit/contact.html'), name='contact'),

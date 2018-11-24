@@ -14,3 +14,6 @@ def login(request):
 def calendar(request):
     return render(request, 'rabbit/calendar.html')
 
+def about(request):
+    return render(request, 'rabbit/aboutUs.html')
+
