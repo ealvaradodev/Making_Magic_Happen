@@ -5,15 +5,12 @@
             <div class="overlay overlay-bg"></div>
             <div class="row fullscreen d-flex align-items-center justify-content-start">
                 <div class="banner-content col-lg-8 col-md-12">
-                    <h1 class="text-uppercase">
-                        Adopt Us. <br>
-                        We need your help.
-                            
-                    </h1>
-                    <p class="text-white sub-head">
-                        
-                    </p>
-                    <a href="{%url 'rabbit:rabbits'%}" class="primary-btn header-btn text-uppercase">Find a forever friend</a>
+                    <div class="about-content col-lg-12">
+                        <h1 class="text-white">
+                            Contact Us				
+                        </h1>	
+                        <p class="text-white link-nav"><a href="{% url 'rabbit:home'%}">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="{% url 'rabbit:contact' %}"> Contact</a></p>
+                    </div>
                 </div>											
             </div>
         </div>
