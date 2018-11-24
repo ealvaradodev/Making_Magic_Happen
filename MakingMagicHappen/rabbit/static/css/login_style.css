@@ -6,6 +6,9 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+	font-family: Tahoma, Geneva, sans-serif;
+	background-color: #F5F5F5;
+
 }
 
 /* Full-width input fields */
@@ -14,47 +17,46 @@ input[type=text], input[type=password] {
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    /*border: 1px solid #ccc;
-    box-sizing: border-box; */
-    margin: 0;
-    padding: 5px 10px;
-    border:0;
-     
-    
+    border: 1px solid #ccc;
+    box-sizing: border-box;
 }
 
 /* Set a style for all buttons */
 button {
-    
-    width: 100%;
-    font-size: 14px;
-    padding: 14px 20px;
-    text-transform: uppercase;
-    font-weight: 500;
-    margin: 8px 0;
-    outline: 0;
-    cursor: pointer;
-    letter-spacing: 1px; 
+    background-color: #461d7c;
     color: white;
-    background-color: #2ecc71;
-      
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
 }
 
 button:hover {
     opacity: 0.8;
 }
 
+/* Extra styles for the cancel button */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.formheader {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
 
 .container {
-     padding: 16px;
-     width: 100%;
-     font-style: bold;
-     font-size: 12px;
-     font-weight: 400;
-     border: 0; 
-     letter-spacing: 1px;
-     background: 0;
-  
+    padding: 16px;
 }
 
 span.psw {
@@ -64,7 +66,7 @@ span.psw {
 
 /* The Modal (background) */
 .modal {
-   display: none; /*Hidden by default */
+    display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     left: 0;
@@ -72,16 +74,35 @@ span.psw {
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-    padding-top: 60px; 
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
 }
 
 /* Modal Content/Box */
 .modal-content {
-    top:0;
-    width: 20%; /* Could be more or less, depending on screen size */
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 3px solid #888;
+    width: 60%; /* Could be more or less, depending on screen size */
 }
 
-*/
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
 /* Add Zoom Animation */
 .animate {
     -webkit-animation: animatezoom 0.6s;
