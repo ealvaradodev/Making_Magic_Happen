@@ -1,29 +1,21 @@
 {% extends 'rabbit/base.html' %}
 {% block content %}
 {% load static %}
-<section class="banner-area relative" id="home">
-    <div class="container">
-        <div class="overlay overlay-bg"></div>
-        <div class="row fullscreen d-flex align-items-center justify-content-start">
-            <div class="banner-content col-lg-8 col-md-12">
-                <h1 class="text-uppercase">
-                    Adopt Us. <br>
-                    We need new homes!		
-                </h1>
-                <p class="text-white sub-head">
-                    
-                </p>
-                <a href="#" class="primary-btn header-btn text-uppercase">Find a forever friend</a>
-            </div>											
+<!--Start banner Area-->
+<section class="banner-area relative" id="home">	
+    <div class="overlay overlay-bg"></div>
+    <div class="container">				
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="about-content col-lg-12">
+                <h1 class="text-white">
+                    About Us				
+                </h1>	
+                <p class="text-white link-nav"><a href="{% url 'rabbit:home'%}">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="#"> Adopt</a><span class="lnr lnr-arrow-right"></span><a href="{% url 'rabbit:rabbits'%}">Rabbits </a>  </p>
+            </div>	
         </div>
     </div>
 </section>
 <!-- End banner Area -->
-
-
-<!-- Start image-carusel Area -->
-
-
 <!-- Start callto-top Area -->
 <section class="callto-top-area section-gap">
     <div class="container">

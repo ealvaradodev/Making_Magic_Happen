@@ -34,7 +34,7 @@
               <div class="container main-menu">
                   <div class="row align-items-center justify-content-between d-flex">
                     <div id="logo">
-                      <a href="home.html"><img src="#" alt="" title="" /></a>
+                      <a href="home.html"><img src="{% static 'img/Making_Magic_Happen_Logo.png' %}" alt="" title="" /></a>
                     </div>
                     <nav id="nav-menu-container">
                       <ul class="nav-menu">
@@ -42,7 +42,7 @@
                         <li><a href="{%url 'rabbit:about' %}">About Us</a></li>                        
                         <li><a href="{% url 'rabbit:calendar'%}">Calendar</a></li>
                         <li><a href="#">Volunteer</a></li>
-                         <li class="menu-has-children"><a href="{% url 'rabbit:adopt'%}">Adopt</a>
+                         <li class="menu-has-children"><a href="#">Adopt</a>
                           <ul>
                             <li><a href="{%url 'rabbit:rabbits'%}">Rabbits</a></li>
                             <li><a href="#">Guniea Pigs</a></li>
