@@ -152,10 +152,4 @@ crashlytics-build.properties
 fabric.properties
 
 # Editor-based Rest Client
-
 .idea/httpRequests
-
-
-MakingMagicHappen/MakingMagicHappen/__pycache__/__init__.cpython-36.pyc
-*.pyc
-*.pyc

@@ -1,6 +1,6 @@
 {% extends 'rabbit/base.html' %}
-{% block content %}
 {% load static %}
+{% block content %}
 <section class="banner-area relative" id="home">
     <div class="container">
         <div class="overlay overlay-bg"></div>
@@ -8,7 +8,7 @@
             <div class="banner-content col-lg-8 col-md-12">
                 <h1 class="text-uppercase">
                     Adopt Us. <br>
-                    We need your help.		
+                    We need your help.
                 </h1>
                 <p class="text-white sub-head">
                     
@@ -35,21 +35,23 @@
     <div class="container">
         <div class="row">
             <div class="active-image-carusel">
+
                 <div class="single-image-carusel">     
                     <!--  .owl-carousel .owl-item img  changes width and height-->      
                     <img alt="bun1"src="{% static 'img/rabt1.jpg' %}"/>
+
                 </div>
                 <div class="single-image-carusel">
-                    <img alt="Image description" src="{% static 'img/rabt2.jpg' %}"/>
+                    <img class="img-fluid" src="{% static 'img/guineaP1.jpg' %}" alt="">
                 </div>
                 <div class="single-image-carusel">
-                    <img alt="Image description" src="{% static 'img/rabt3.jpg' %}"/>
+                    <img class="img-fluid" src="{% static 'img/rabt10.jpg' %}" alt="">
                 </div>
                 <div class="single-image-carusel">
-                
-                    <img  alt="Image description"src="{% static 'img/rabt4.jpg' %}"/>
+                    <img class="img-fluid" src="{% static 'img/guineaP2.jpg' %}" alt="">
                 </div>	
                 <div class="single-image-carusel">
+
                         <img  alt="Image description"src="{% static 'img/rabt5.jpg' %}"/>
                 </div>
                 <div class="single-image-carusel">
@@ -72,6 +74,7 @@
                 </div>
                 <div class="single-image-carusel">
                         <img  alt="Image description"src="{% static 'img/rabt5.jpg' %}"/>
+
                 </div>															
             </div>
         </div>
