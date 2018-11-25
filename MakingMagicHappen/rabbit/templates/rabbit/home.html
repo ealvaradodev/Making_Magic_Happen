@@ -13,21 +13,33 @@
                 <p class="text-white sub-head">
                     
                 </p>
-                <a href="{%url 'rabbit:rabbits'%}" class="primary-btn header-btn text-uppercase">Find a forever friend</a>
+                <a href="{%url 'rabbit:adopt'%}" class="primary-btn header-btn text-uppercase">Find a forever friend</a>
             </div>											
         </div>
     </div>
 </section>
 <!-- End banner Area -->
 
-
+<section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 <!-- Start image-carusel Area -->
 <section class="image-carusel-area">
     <div class="container">
         <div class="row">
             <div class="active-image-carusel">
-                <div class="single-image-carusel">
-                    <img class="img-fluid" src="{% static 'img/rabt9.jpg' %}" alt="">
+
+                <div class="single-image-carusel">     
+                    <!--  .owl-carousel .owl-item img  changes width and height-->      
+                    <img alt="bun1"src="{% static 'img/rabt1.jpg' %}"/>
+
                 </div>
                 <div class="single-image-carusel">
                     <img class="img-fluid" src="{% static 'img/guineaP1.jpg' %}" alt="">
@@ -39,32 +51,35 @@
                     <img class="img-fluid" src="{% static 'img/guineaP2.jpg' %}" alt="">
                 </div>	
                 <div class="single-image-carusel">
-                    <img class="img-fluid" src="{% static 'img/rabt9.jpg' %}" alt="">
+
+                        <img  alt="Image description"src="{% static 'img/rabt5.jpg' %}"/>
                 </div>
                 <div class="single-image-carusel">
-                    <img class="img-fluid" src="{% static 'img/guineaP1.jpg' %}" alt="">
+                        <img  alt="Image description"src="{% static 'img/rabt6.jpg' %}"/>
                 </div>
                 <div class="single-image-carusel">
-                    <img class="img-fluid" src="{% static 'img/rabt10.jpg' %}" alt="">
+                        <img  alt="Image description"src="{% static 'img/rabt2.jpg' %}"/>
                 </div>
                 <div class="single-image-carusel">
-                    <img class="img-fluid" src="{% static 'img/guineaP2.jpg' %}" alt="">
+                        <img  alt="Image description"src="{% static 'img/rabt1.jpg' %}"/>
                 </div>
                 <div class="single-image-carusel">
-                    <img class="img-fluid" src="{% static 'img/rabt9.jpg' %}" alt="">
+                        <img  alt="Image description"src="{% static 'img/rabt3.jpg' %}"/>
                 </div>
                 <div class="single-image-carusel">
-                    <img class="img-fluid" src="{% static 'img/guineaP1.jpg' %}" alt="">
+                        <img  alt="Image description"src="{% static 'img/rabt2.jpg' %}"/>
                 </div>
                 <div class="single-image-carusel">
-                    <img class="img-fluid" src="{% static 'img/rabt10.jpg' %}" alt="">
+                        <img  alt="Image description"src="{% static 'img/rabt1.jpg' %}"/>
                 </div>
                 <div class="single-image-carusel">
-                    <img class="img-fluid" src="{% static 'img/guineaP2.jpg' %}" alt="">
+                        <img  alt="Image description"src="{% static 'img/rabt5.jpg' %}"/>
+
                 </div>															
             </div>
         </div>
     </div>	
+</section>
 </section>
 <!-- End image-carusel Area -->
 
@@ -94,8 +109,7 @@
             </div>
             <div class="col-lg-6 home-about-right no-padding">
                 <h1>
-                    Globally Connected
-                    by Large Network
+                    Join our Voluneteer Network
                 </h1>
                 <h5>We are here to listen from you deliver exellence</h5>
                 <p>
@@ -109,7 +123,7 @@
 <!-- End home-about Area -->
 
 
-<!-- Start video Area -->
+<!-- 
 <section class="video-area section-gap">
     <div class="container">
         <div class="row justify-content-center align-items-center">
@@ -128,7 +142,7 @@
         </div>
     </div>	
 </section>
-<!-- End video Area -->
+End video Area -->
 
 
 <!-- Start process Area -->
@@ -310,27 +324,6 @@
 </section>
 <!-- End testomial Area -->						
 
-<!-- Start calltoaction Area -->
-<section class="calltoaction-area section-gap relative">
-    <div class="container">
-        <div class="overlay overlay-bg"></div>						
-        <div class="row align-items-center justify-content-center">
-            <h1 class="text-white">Want to help? Become a Volunteer!</h1>
-            <br><br>
-            <p class="text-white">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
-            </p>
-            <br>
-            <div class="buttons d-flex flex-row">
-                
-                <!--TODO: ADD LINK TO VOLUNTEER -->
-                <a href="#" class="primary-btn text-uppercase">Read More</a>
-                <a href="#" class="primary-btn text-uppercase">Read More</a>
-            </div>
-        </div>
-    </div>	
-</section>
-<!-- End calltoaction Area -->
+
 
 {% endblock %}
