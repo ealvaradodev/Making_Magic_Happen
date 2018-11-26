@@ -34,22 +34,20 @@
               <div class="container main-menu">
                   <div class="row align-items-center justify-content-between d-flex">
                     <div id="logo">
-                      <a href="home.html"><img src="#" alt="" title="" /></a>
+                      <a href="home.html"><img src="{% static 'img/Making_Magic_Happen_Logo.png' %}" alt="" title="" /></a>
                     </div>
                     <nav id="nav-menu-container">
                       <ul class="nav-menu">
                         <li class="menu-active"><a href="{%url 'rabbit:home'%}">Home</a></li>
-
-                        <li><a href="#">Volunteer</a></li>
                         <li><a href="{%url 'rabbit:donate'%}">Donate</a></li>
                         <li><a href="{%url 'rabbit:about' %}">About Us</a></li>                        
 
                         <li><a href="{% url 'rabbit:calendar'%}">Calendar</a></li>
-                       
-                         <li class="menu-has-children"><a href="{% url 'rabbit:adopt'%}">Adopt</a>
+                        <li><a href="#">Volunteer</a></li>
+                         <li class="menu-has-children"><a href="{% url 'rabbit:adopt'%}">Adopt</a>    <!--Don't link the Adopt to the adopt page because if you are in page other then adopt you can't select the childern menu-->
                           <ul>
                             <li><a href="{%url 'rabbit:rabbits'%}">Rabbits</a></li>
-                            <li><a href="#">Guniea Pigs</a></li>
+                            <li><a href="{%url 'rabbit:guineapigs'%}">Guniea Pigs</a></li>
                           </ul>
 
                         </li>
@@ -58,7 +56,7 @@
                           {% if user.is_superuser%}
                             <li><a href="{% url 'rabbit:register' %}"> Register User </a></li>
                           {% endif %}
-                          <li><a href="#"> Rabbit Submission Form</a></li>
+                          <li><a href="{% url 'rabbit:rabbitSubmission' %}"> Rabbit Submission Form</a></li>
                           <li class = "menu-has-children"><a href="#">{{user.username}} </a>
                             <ul>
                               <li><a href="{% url 'logout' %}">
@@ -70,7 +68,7 @@
                         {% else %}
                           <li><a href="{%url 'rabbit:login'%}"> login </a></li>
                         {% endif %} 
-                        <li><button type="button" class="btn btn-success"><a href="https://www.paypal.com/donate/?token=0uuolZ5xysEBHJP9WRqXaT_bBOYugJWuiIX9Ytygm36J8mL7D_2jVOxJluVKxZxl5eWsEG&country.x=US&locale.x=US" class="donate">DONATE</a><i class="fa fa-heart" aria-hidden="true"></i></button></li>
+                        <li><button type="button" class="btn btn-success"><a href="https://www.paypal.me/magichappensrescue" class="donate">DONATE</a><i class="fa fa-heart" aria-hidden="true"></i></button></li>
                       </ul>
                       
                     

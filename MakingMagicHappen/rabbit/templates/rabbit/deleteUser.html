@@ -1,0 +1,34 @@
+{% extends 'rabbit/base.html' %} 
+{% load static %} 
+ 
+{% block content %} 
+
+<section class="banner-area relative" id="home">	
+    <div class="overlay overlay-bg"></div>
+    <div class="container">				
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="about-content col-lg-12">
+                <h1 class="text-white">
+                    Register New User			
+                </h1>	
+                <p class="text-white link-nav"><a href="{% url 'rabbit:home'%}">Home </a>  
+                    <span class="lnr lnr-arrow-right"></span><a href="{% url 'rabbit:register' %}"> Register New User</a>
+                    <span class="lnr lnr-arrow-right"></span><a href="/deleting/"> Delete User or Change Information</a>
+                    <span class="lnr lnr-arrow-right"></span><a href="./"> Delete User</a></p>
+            </div>	
+        </div>
+    </div>
+</section>
+<!-- End banner Area -->	
+<br>
+<br>
+<br>
+<section class="home-about-area" style="text-align:center; vertical-align: middle; padding: 20 px 47px;">
+    <div class="container-fluid">
+        <form action = '.' method = 'POST'>{% csrf_token %}
+                <h1>Do you want to delete the user "{{ user.username }}"?</h1>
+                <p><input type='submit' value'Yes' /> <a href="../../../post/new/">Cancel</a></p>
+        </form>
+    </div>	
+</section>
+{% endblock %} 

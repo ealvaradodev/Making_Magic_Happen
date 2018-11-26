@@ -9,6 +9,24 @@ class calendarEvent(models.Model):
     event_time = models.TimeField((u"event Time"), auto_now_add=True, blank=True)
     event_location = models.CharField(max_length = 1000, null= False)
 
+
+# model for the rabbit profile
+class rabbitProfile(models.Model):
+    name = models.CharField(max_length= 42, blank= False)
+    Breed = models.CharField(max_length= 30)
+    Gender = models.CharField(max_length= 6)
+    Age = models.CharField(max_length= 10)
+    Size = models.CharField(max_length= 10)
+    Spayed_Neutered = models.CharField(max_length=5)
+    Location = models.CharField(max_length=300, default='')
+    about = models.TextField()
+    profile_createdDate = models.DateTimeField(auto_now_add=True)
+    Picture = models.ImageField(upload_to='rabbit_image', blank= True)
+
+    class Meta:
+        db_table='rabbit_info'
+
+
 #from django.contrib.auth.models import User
 #from PIL import Image
 

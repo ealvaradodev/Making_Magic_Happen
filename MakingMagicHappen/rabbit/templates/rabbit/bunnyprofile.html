@@ -1,0 +1,19 @@
+{% extends 'rabbit/base.html' %}
+{% load static %}
+{% block content %}
+<section class="banner-area relative" id="home">	
+        <div class="overlay overlay-bg"></div>
+        <div class="container">				
+            <div class="row d-flex align-items-center justify-content-center">
+                <div class="about-content col-lg-12">
+                    <h1 class="text-white">
+                        About Us				
+                    </h1>	
+                    <p class="text-white link-nav"><a href="{% url 'rabbit:home'%}">Home </a>  <span class="lnr lnr-arrow-right"></span> <a href="#"> Adopt</a>  <span class="lnr lnr-arrow-right"></span> <a href="{% url 'rabbit:rabbits'%}">Rabbit</a>  <span class="lnr lnr-arrow-right"></span> <a href="./">{{rabbit.name}}</a></p>
+                </div>	
+            </div>
+        </div>
+    </section>
+    <!-- End banner Area -->	
+<p>{{rabbit.name}}</p>
+{% endblock %}
