@@ -16,15 +16,3 @@ class changingUserInfoForm(forms.Form):
     first_name = forms.CharField(max_length = 30, required = False) 
     last_name = forms.CharField(max_length = 150, required = False)
     is_superuser = forms.BooleanField(required=False)
-
-"""
-class usernameListForm(forms.Form):
-    users = []
-    for i in range(100):
-        try:
-            users.append(User.objects.get(id=i).username)
-        except:
-            pass
-    print(users)
-    theOneYouPick = forms.ChoiceField(choices = users)
-    """

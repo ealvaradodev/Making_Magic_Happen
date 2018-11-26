@@ -14,7 +14,6 @@ def login(request):
 def calendar(request):
     return render(request, 'rabbit/calendar.html')
 
-
 def register(request):
     form = newUserForm(request.POST or None)
     if form.is_valid():
@@ -25,19 +24,6 @@ def register(request):
         "form" : form
     }
     return render(request, 'rabbit/register.html', context)
-"""
-def usernameList(request):
-    my_form = usernameListForm(request.POST or None)
-    if my_form.is_valid():
-        print(my_form.cleaned_data)
-        return redirect(request,'rabbit/user/' + my_form.id)
-    else:
-        print(my_form.errors)
-    context = {
-        "my_form" : my_form
-    }
-    return render(request, 'rabbit/deleting.html', context)
-"""
 
 def changingUserInfo(request, id):
     form = changingUserInfoForm(request.POST or None)
