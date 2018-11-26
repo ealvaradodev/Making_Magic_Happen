@@ -17,11 +17,13 @@ class rabbitProfile(models.Model):
     Gender = models.CharField(max_length= 6)
     Age = models.CharField(max_length= 10)
     Size = models.CharField(max_length= 10)
-    Spayed_Neutered= models.CharField(max_length=5)
+    Spayed_Neutered = models.CharField(max_length=5)
     Location = models.CharField(max_length=300, default='')
     about = models.TextField()
     profile_createdDate = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(upload_to='rabbit_image', blank= True)
+
+   
 
 
 #from django.contrib.auth.models import User
@@ -48,4 +50,7 @@ class rabbitProfile(models.Model):
 #    noitem = models.IntegerField()
 #   purdate = models.DateTimeField("purchase-date")
 #    deldate = models.DateTimeField("delivary-date")
-#end of stuff to add images
+#end of stuff to add image
+
+#class uploadPic(models.Model):
+  #   model_pic = models.ImageField(upload_to = 'pic_folder/', default = 'pic_folder/None/no-img.jpg')
