@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.views.generic.edit import CreateView
 from django.contrib.auth.forms import UserCreationForm
-
+from django.urls import path
 from django.conf.urls import url
 from django.urls import path
 from . import views
@@ -22,10 +22,12 @@ urlpatterns = [
     #url(r'^care-info/$', TemplateView.as_view(template_name='rabbit/care-info.html'), name='care-info'),
     url(r'^donate/$', TemplateView.as_view(template_name='rabbit/donate.html'), name='donate'),
     url(r'^calendar/$', TemplateView.as_view(template_name='rabbit/calendar.html'), name='calendar'),
+    url('post/new/', views.register, name='register'),
+    url(r'^deleting/$', views.usernameList, name='deleting'),
+    path('rabbit/userDeleting/<int:id>/', views.userDelete,name='deleteUser'),
+    path('rabbit/userChanging/<int:id>/', views.changingUserInfo,name='changingUserInfo')
     #url(r'^link/$', TemplateView.as_view(template_name='http://www.bunnyhugga.com/a-to-z/rabbit-behaviour/companionship.html'), name='link'),
-
     url(r'^register/$', CreateView.as_view(template_name='rabbit/register.html',form_class=UserCreationForm, success_url='/'),name='register'),
     path('contact/', views.emailService, name='contact'),
-
 ]
 
