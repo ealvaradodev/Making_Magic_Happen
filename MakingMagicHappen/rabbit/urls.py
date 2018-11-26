@@ -17,7 +17,6 @@ urlpatterns = [
     url(r'^adopt/$', TemplateView.as_view(template_name='rabbit/adopt.html'), name='adopt'),
     # url(r'^contact/$', TemplateView.as_view(template_name='rabbit/contact.html'), name='contact'),
     url(r'^rabbits/$', TemplateView.as_view(template_name='rabbit/rabbits.html'), name='rabbits'),
-
     url(r'^guinea-pigs/$', TemplateView.as_view(template_name='rabbit/guineapigs.html'), name='guineapigs'),
     #url(r'^care-info/$', TemplateView.as_view(template_name='rabbit/care-info.html'), name='care-info'),
     url(r'^donate/$', TemplateView.as_view(template_name='rabbit/donate.html'), name='donate'),
