@@ -44,7 +44,7 @@
 
                         <li><a href="{% url 'rabbit:calendar'%}">Calendar</a></li>
                         <li><a href="#">Volunteer</a></li>
-                         <li class="menu-has-children"><a href="#">Adopt</a>    <!--Don't link the Adopt to the adopt page because if you are in page other then adopt you can't select the childern menu-->
+                         <li class="menu-has-children"><a href="{% url 'rabbit:adopt'%}">Adopt</a>    <!--Don't link the Adopt to the adopt page because if you are in page other then adopt you can't select the childern menu-->
                           <ul>
                             <li><a href="{%url 'rabbit:rabbits'%}">Rabbits</a></li>
                             <li><a href="{%url 'rabbit:guineapigs'%}">Guniea Pigs</a></li>
