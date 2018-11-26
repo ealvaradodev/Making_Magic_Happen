@@ -1,33 +1,33 @@
 {% extends 'rabbit/base.html' %}
 {% block content %}
 {% load static %}
-<!--Start banner Area-->	
-<section class="banner-area relative" id="home">
-    <div class="container">
-        <div class="overlay overlay-bg"></div>
-        <div class="row fullscreen d-flex align-items-center justify-content-start">
-            <div class="banner-content col-lg-8 col-md-12">
-                <h1 class="text-uppercase">
-                    Adopt Don't Shop!		
-                </h1>
-                <p class="text-white link-nav"><a href="{% url 'rabbit:home'%}">Home </a>  <span class="lnr lnr-arrow-right"></span> <a href="#"> Adopt</a>  <span class="lnr lnr-arrow-right"></span> <a href="{% url 'rabbit:rabbits'%}">Rabbit</a></p>
-                    
-                </p>
-                
-            </div>											
+<!--Start banner Area-->
+<section class="banner-area relative" id="home">	
+    <div class="overlay overlay-bg"></div>
+    <div class="container">				
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="about-content col-lg-12">
+                <h1 class="text-white">
+                    Adopt Don't Shop!				
+                </h1>	
+                <p class="text-white link-nav"><a href="{% url 'rabbit:home'%}">Home </a>  <span class="lnr lnr-arrow-right"></span> <a href="#"> Adopt</a>  <span class="lnr lnr-arrow-right"></span> <a href="{% url 'rabbit:rabbits'%}">Rabbits</a></p>
+            </div>	
         </div>
     </div>
 </section>
+<br>
+<br>
+
 <!-- End banner Area -->
 <!-- Start callto-top Area -->
-<section class="callto-top-area section-gap">
+<section class="callto-top-area">
     <div class="container">
         <div class="row justify-content-between callto-top-wrap pt-40 pb-40">
             <div class="col-lg-8 callto-top-left">
                 <h1>Please select your favourite pet</h1>
             </div>
             <div class="col-lg-4 callto-top-right">
-                <a href="#" class="primary-btn">Fill Adoption Form</a>
+                <a href="https://docs.google.com/forms/d/13Q-xInb93ozPtI9uwqhO4K6zj6HBy5un7KvOpas0ygk/viewform?edit_requested=true" class="primary-btn">Fill Adoption Form</a>
             </div>							
         </div>
     </div>	
@@ -40,7 +40,7 @@
             <div class="row">
                 {% for rabbit in all_rabbit_list %}
                 <div class="col-lg-3 col-md-6">
-                        <div class="card">
+                        <div class="card" style="margin-bottom:20px">
                                 <div class="card-body">
                                   <h5 class="card-title">{{rabbit.name}}</h5>
                                   <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -48,12 +48,6 @@
                                 </div>
                                <a href="bunnyprofile/{{ rabbit.id }}/"> <img class="card-img-bottom" src="/{{rabbit.image.url}}" alt="Card image cap"></a>
                               </div>
-                    <!-- <div class="single-cat-list">
-                            <img  alt="rabbit"src="/{{rabbit.image.url}}" class = "img-fluid"/>
-                            <div class="overlay">
-                              <div class="text">{{rabbit.name}}</div>
-                      </div>
-                    </div> -->
                 </div>
                 {% endfor %}
             </div>
