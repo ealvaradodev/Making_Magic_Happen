@@ -38,7 +38,8 @@
     -webkit-touch-callout: none; }
   .owl-carousel .owl-item img {
     display: block;
-    width: 350px; /*change width*/   
+    width: 286px; /*change width*/  
+    height: 300px; 
   }
     /*.owl-carousel .owl-item img {}
     -webkit-transform-style: preserve-3d; }*/
