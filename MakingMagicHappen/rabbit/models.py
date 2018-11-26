@@ -21,10 +21,9 @@ class rabbitProfile(models.Model):
     Location = models.CharField(max_length=300, default='')
     about = models.TextField()
     profile_createdDate = models.DateTimeField(auto_now_add=True)
-    Picture = models.ImageField(upload_to='rabbit_image', blank= True)
+    image = models.ImageField(upload_to='rabbit_image', blank= True)
 
-    class Meta:
-        db_table='rabbit_info'
+   
 
 
 #from django.contrib.auth.models import User
