@@ -10,7 +10,7 @@
                 <h1 class="text-uppercase">
                     Adopt Don't Shop!		
                 </h1>
-                <p class="text-white link-nav"><a href="{% url 'rabbit:home'%}">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="#"> Adopt</a><span class="lnr lnr-arrow-right"></span><a href="{% url 'rabbit:rabbits'%}">Rabbits </a>  </p>
+                <p class="text-white link-nav"><a href="{% url 'rabbit:home'%}">Home </a>  <span class="lnr lnr-arrow-right"></span> <a href="#"> Adopt</a>  <span class="lnr lnr-arrow-right"></span> <a href="{% url 'rabbit:rabbits'%}">Rabbit</a></p>
                     
                 </p>
                 
@@ -46,7 +46,7 @@
                                   <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                                   <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
                                 </div>
-                                <img class="card-img-bottom" src="/{{rabbit.image.url}}" alt="Card image cap">
+                               <a href="bunnyprofile/{{ rabbit.id }}/"> <img class="card-img-bottom" src="/{{rabbit.image.url}}" alt="Card image cap"></a>
                               </div>
                     <!-- <div class="single-cat-list">
                             <img  alt="rabbit"src="/{{rabbit.image.url}}" class = "img-fluid"/>
