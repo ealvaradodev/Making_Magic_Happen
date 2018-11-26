@@ -16,3 +16,13 @@ class changingUserInfoForm(forms.Form):
     first_name = forms.CharField(max_length = 30, required = False) 
     last_name = forms.CharField(max_length = 150, required = False)
     is_superuser = forms.BooleanField(required=False)
+    
+#Enter Your Name
+#Enter email address
+#Enter your Subject
+#Message
+class EmailServiceForm(forms.Form):
+    from_email = forms.EmailField(required=True)
+    subject = forms.CharField(required=True)
+    message = forms.CharField(widget=forms.Textarea, required=True)
+
