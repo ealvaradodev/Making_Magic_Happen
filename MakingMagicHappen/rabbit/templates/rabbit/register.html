@@ -35,7 +35,6 @@
         //if(!confirm('Are you sure?'))e.preventDefault();
         var user_choice = window.confirm('Would you like to continue?');
 
-
         if(user_choice==true) {
             window.alert('User was created.');
             element.submit("{% url 'rabbit:register' %}");
