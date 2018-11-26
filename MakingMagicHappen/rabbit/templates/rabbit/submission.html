@@ -11,39 +11,58 @@
     }
 </style>
 
-<section class="banner-area relative" id="home"> 
-    <div class="container"> 
-        <div class="row fullscreen d-flex align-items-center justify-content-start">	 
-            <form action = "{% url 'rabbit:submission' %}" method = "POST"> 
-                    {% csrf_token %} 
-                    {{ form }} 
-                <label for="rabbitname"> Rabbit Name </label>
-                <input id = "rabbitname" type="text" name = "rabbitname" value = "{{current_name}}"> 
-                <br/>
-                <label for="breed"> Breed </label>
-                <input id = "breed" type="text" name = "breed" value = "{{current_breed}}">
-                <br/>
-                <label for="gender"> Gender </label>
-                <input id = "gender" type="text" name = "gender" value = "{{current_gender}}">
-                <br/>
-                <label for="age"> Age </label>
-                <input id = "age" type="text" name = "age" value = "{{current_age}}">
-                <br/>
-                <label for="size"> Size </label>
-                <input id = "size" type="text" name = "size" value = "{{current_size}}">
-                <br/>
-                <label for="additionalinfo"> Additional Info </label>
-                <input id = "additionalinfo" type="text" name = "additionalinfo" value = "{{current_info}}">
-                <br/>
-                <input id="id_image" type="file" class="" name="image"> 
-
-                <button type="Submit">Submit</button>
-
-               
-            </form>                                   
-        </div> 
-    </div> 
-</section> 
+<section class="banner-area relative" id="home">	
+        <div class="overlay overlay-bg"></div>
+        <div class="container">				
+            <div class="row d-flex align-items-center justify-content-center">
+                <div class="about-content col-lg-12">
+                    <h1 class="text-white">
+                        Subimission				
+                    </h1>	
+                    <p class="text-white link-nav"><a href="{% url 'rabbit:home'%}">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="{% url 'rabbit:submission' %}"> Submission</a></p>
+                </div>	
+            </div>
+        </div>
+    </section> 
+<!-- Start home-about1 Area -->
+<section class="home-about-area">
+    <div class="container-fluid">
+        <div class="row align-items-center">	
+            <div class="col-lg-6 home-about-left no-padding">
+                <div style="margin-left:150px; margin-top:30px; margin-bottom: 30px">
+                    <form action = "{% url 'rabbit:submission' %}" method = "POST"> 
+                            {% csrf_token %} 
+                            {{ form }} 
+                        <label for="rabbitname"> Rabbit Name </label>
+                        <input id = "rabbitname" type="text" name = "rabbitname" value = "{{current_name}}"> 
+                        <br/>
+                        <label for="breed"> Breed </label>
+                        <input id = "breed" type="text" name = "breed" value = "{{current_breed}}">
+                        <br/>
+                        <label for="gender"> Gender </label>
+                        <input id = "gender" type="text" name = "gender" value = "{{current_gender}}">
+                        <br/>
+                        <label for="age"> Age </label>
+                        <input id = "age" type="text" name = "age" value = "{{current_age}}">
+                        <br/>
+                        <label for="size"> Size </label>
+                        <input id = "size" type="text" name = "size" value = "{{current_size}}">
+                        <br/>
+                        <label for="additionalinfo"> Additional Info </label>
+                        <input id = "additionalinfo" type="text" name = "additionalinfo" value = "{{current_info}}">
+                        <br/>
+                        <input id="id_image" type="file" class="" name="image"> 
+        
+                        <button type="Submit">Submit</button>
+        
+                       
+                    </form> 
+                    </div>
+   
+            </div>
+        </div>
+    </div>	
+</section>
 
 <!--<form action="{% url 'rabbit:submission' %}" method="post">
     {% csrf_token %}
