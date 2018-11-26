@@ -11,7 +11,10 @@
                 <h1 class="text-white">
                     Register New User			
                 </h1>	
-                <p class="text-white link-nav"><a href="{% url 'rabbit:home'%}">Home </a>  <span class="lnr lnr-arrow-right"></span><a href="{% url 'rabbit:about' %}"> About Us</a></p>
+                <p class="text-white link-nav"><a href="{% url 'rabbit:home'%}">Home </a>  
+                    <span class="lnr lnr-arrow-right"></span><a href="{% url 'rabbit:register' %}"> Register New User</a>
+                    <span class="lnr lnr-arrow-right"></span><a href="/deleting/"> Delete User or Change Information</a>
+                    <span class="lnr lnr-arrow-right"></span><a href="./"> Delete User</a></p>
             </div>	
         </div>
     </div>
@@ -25,7 +28,7 @@
         <form action = '.' method = 'POST'>{% csrf_token %}
                 <h1>Do you want to delete the user "{{ user.username }}"?</h1>
                 <p><input type='submit' value'Yes' /> <a href="../../../post/new/">Cancel</a></p>
-        </form> 
+        </form>
     </div>	
 </section>
 {% endblock %} 

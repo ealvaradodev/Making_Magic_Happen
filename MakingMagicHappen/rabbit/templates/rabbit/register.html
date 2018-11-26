@@ -11,7 +11,8 @@
                 <h1 class="text-white">
                     Register New User			
                 </h1>	
-                <p class="text-white link-nav"><a href="{% url 'rabbit:home'%}">Home </a>  <span class="lnr lnr-arrow-right"></span><a href="{% url 'rabbit:about' %}"> About Us</a></p>
+                <p class="text-white link-nav"><a href="{% url 'rabbit:home'%}">Home </a>  
+                    <span class="lnr lnr-arrow-right"></span><a href="./"> Register New User </a></p>
             </div>	
         </div>
     </div>
@@ -23,12 +24,18 @@
 <section class="home-about-area" style="text-align:center; vertical-align: middle; padding: 20 px 47px;">
     <div class="container-fluid">
         <form action = '.' method = 'POST'> 
-            {% csrf_token %} 
-            {{ form.as_p }} 
-            <input type="submit" value='Save' onclick="clicked(event)"/>
-            <li><a href="{% url 'rabbit:deleting' %}"> Delete User or Change Information </a></li>
-        </form> 
-    </div>	
+            <div style="text-align: center;">
+                <div style="display: inline-block; text-align: right;">
+                    {% csrf_token %} 
+                    {{ form.as_p }} 
+                </div>
+            </div>
+            <div style="display: inline-block; text-align: center;">
+                <input type="submit" value='Save' onclick="clicked(event)" />
+                <p><a href="{% url 'rabbit:deleting' %}">Delete User or Change Information </a></p>
+            </div>	
+        </form>
+    </div> 
 </section>
 <script>
     function clicked(e){

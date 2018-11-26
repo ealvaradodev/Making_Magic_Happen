@@ -11,7 +11,10 @@
                 <h1 class="text-white">
                     Register New User			
                 </h1>	
-                <p class="text-white link-nav"><a href="{% url 'rabbit:home'%}">Home </a>  <span class="lnr lnr-arrow-right"></span><a href="{% url 'rabbit:about' %}"> About Us</a></p>
+                <p class="text-white link-nav"><a href="{% url 'rabbit:home'%}">Home </a>  
+                    <span class="lnr lnr-arrow-right"></span><a href="{% url 'rabbit:register' %}"> Register New User</a>
+                    <span class="lnr lnr-arrow-right"></span><a href="/deleting/"> Delete User or Change Information</a>
+                    <span class="lnr lnr-arrow-right"></span><a href="./"> Change Information</a></p>
             </div>	
         </div>
     </div>
@@ -22,12 +25,20 @@
 <br>
 <section class="home-about-area" style="text-align:center; vertical-align: middle; padding: 20 px 47px;">
     <div class="container-fluid">
-            <form action = '.' method = 'POST'> 
+        <form action = '.' method = 'POST'> 
+            <div style="text-align: center;">
+                <div style="display: inline-block; text-align: right;">
                     <p>What information do you want to change about "{{ user.username }}"?</p>
                     {% csrf_token %} 
                     {{ changingForm.as_p }} 
-                    <p><input type='submit' value='Yes' /> <a href="../../../post/new/">Cancel</a></p>
-            </form> 
+                </div>
+            </div>
+            <div style="display: inline-block; text-align: center;"></div>
+                <p><input type='submit' value='Save'/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="../../../post/new/">Cancel</a></p>
+            </div>	
+        </form> 
     </div>	
 </section>
 {% endblock %} 
