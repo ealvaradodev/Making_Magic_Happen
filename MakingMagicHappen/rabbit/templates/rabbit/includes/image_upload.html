@@ -1,0 +1,10 @@
+<div class="file_upload">
+	<p id="warning_tag">Picture File Only</p>
+	<form method="post" enctype="multipart/form-data" action="">
+		{% csrf_token %}
+		<label> Upload Photo:	 </label>
+		<input type="file" name="file" id="info">
+		<button type="submit" class="btn btn-danger btn-sm active" id="upload_btn">Upload photo</button>
+	</form>
+	<div id="wheel"></div>
+</div>

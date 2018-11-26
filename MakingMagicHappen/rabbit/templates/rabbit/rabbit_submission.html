@@ -1,0 +1,43 @@
+{% extends 'rabbit/base.html' %}
+{% load static %}
+{% block csslink%}
+<style>
+    #more1, #more2, #more3{
+        display: none;
+    }
+</style>
+{% endblock csslink %}
+{% block content %}
+<!--Start banner Area-->
+<section class="banner-area relative" id="home">	
+    <div class="overlay overlay-bg"></div>
+    <div class="container">				
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="about-content col-lg-12">
+                <h1 class="text-white">
+                    Rabbit Form				
+                </h1>	
+                <p class="text-white link-nav"><a href="{% url 'rabbit:home'%}">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="{% url 'rabbit:rabbitsubmission' %}"> Rabbit Submission Form</a></p>
+            </div>	
+        </div>
+    </div>
+</section>
+<!-- End banner Area -->	
+<br>
+<br>
+<br>
+<!-- Start home-about1 Area -->
+<section class="home-about-area">
+    <div class="container-fluid">
+        <div class="row align-items-center">	
+            <div class="col-lg-6 home-about-left no-padding">
+                    {% include 'rabbit/includes/image_upload.html' %}
+            </div>
+        </div>
+    </div>	
+</section>
+<br>
+<br>
+<br>
+<!-- End home-about1 Area -->	
+{% endblock%}

@@ -2,6 +2,7 @@ from django.shortcuts import render_to_response, render, redirect
 from django.views import generic
 from django.contrib.auth.models import User
 from .forms import EmailServiceForm
+from .models import rabbitProfile
 from django.views.generic import FormView, TemplateView
 from django.http import JsonResponse, HttpResponseRedirect
 from django.core.mail import BadHeaderError, send_mail
@@ -20,6 +21,20 @@ def calendar(request):
 
 def about(request):
     return render(request, 'rabbit/aboutUs.html')
+
+class rabbit_views(generic.ListView):
+    template_name='rabbit/rabbits.html'
+    context_object_name = 'all_rabbit_list'
+    queryset = rabbitProfile.objects.all()
+
+    # def get_queryset(self):
+    #     all_rabbit_data = rabbitProfile.objects.all()
+    #     return all_rabbit_data
+    
+    # def get_context_data(self, **kwargs):
+    #     context = super(rabbit_views, self).get_context_data(**kwargs)
+    #     return context
+
 
 #Enter email address
 #Enter your Subject
