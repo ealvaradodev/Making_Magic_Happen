@@ -1,6 +1,7 @@
 {% extends 'rabbit/base.html' %}
 {% block content %}
 {% load static %}
+<!--Start banner Area-->	
 <section class="banner-area relative" id="home">
     <div class="container">
         <div class="overlay overlay-bg"></div>
@@ -9,7 +10,7 @@
                 <h1 class="text-uppercase">
                     Adopt Don't Shop!		
                 </h1>
-                <p class="text-white sub-head">
+                <p class="text-white link-nav"><a href="{% url 'rabbit:home'%}">Home </a>  <span class="lnr lnr-arrow-right"></span> <a href="#"> Adopt</a>  <span class="lnr lnr-arrow-right"></span> <a href="{% url 'rabbit:rabbits'%}">Rabbit</a></p>
                     
                 </p>
                 
@@ -18,11 +19,6 @@
     </div>
 </section>
 <!-- End banner Area -->
-
-
-<!-- Start image-carusel Area -->
-
-
 <!-- Start callto-top Area -->
 <section class="callto-top-area section-gap">
     <div class="container">
@@ -42,112 +38,24 @@
 <section class="cat-list-area section-gap">
         <div class="container">
             <div class="row">
+                {% for rabbit in all_rabbit_list %}
                 <div class="col-lg-3 col-md-6">
-                    <div class="single-cat-list">
-                            <img  alt="rabbit"src="{% static 'img/rabt1.jpg' %}" class = "img-fluid"/>
-                            <!--img src="img/rabt2.jpg" alt="" class="img-fluid">-->
-                            <div class="overlay">
-                              <div class="text">Rabbit1</div>
-                      </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-cat-list">
-                            <img  alt="rabbit"src="{% static 'img/rabt2.jpg' %}" class = "img-fluid"/>
-                      <!--img src="img/rabt2.jpg" alt="" class="img-fluid">-->
-                      <div class="overlay">
-                        <div class="text">Rabbit2</div>
-                      </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-cat-list">
-                            <img  alt="rabbit"src="{% static 'img/rabt3.jpg' %}" class = "img-fluid"/>
-                            <div class="overlay">
-                              <div class="text">Rabbit3</div>
-                      </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-cat-list">
-                            <img  alt="rabbit"src="{% static 'img/rabt4.jpg' %}" class = "img-fluid"/>
-                            <div class="overlay">
-                              <div class="text">Rabbit4</div>
-                      </div>
-                    </div>
-                </div>	
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-cat-list">
-                            <img  alt="rabbit"src="{% static 'img/rabt5.jpg' %}" class = "img-fluid"/>
-                            <div class="overlay">
-                              <div class="text">Rabbit5</div>
-                      </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-cat-list">
-                            <img  alt="rabbit"src="{% static 'img/rabt6.jpg' %}" class = "img-fluid"/>
-                            <div class="overlay">
-                              <div class="text">Rabbit6</div>
-                      </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-cat-list">
-                            <img  alt="rabbit"src="{% static 'img/rabt7.jpg' %}" class = "img-fluid"/>
-                            <div class="overlay">
-                              <div class="text">Rabbit7</div>
-                      </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6"> 
-                    <div class="single-cat-list">
-                            <img  alt="rabbit"src="{% static 'img/rabt8.jpg' %}" class = "img-fluid"/>
-                            <div class="overlay">
-                              <div class="text">Rabbit8</div>
-                      </div>
-                    </div>
-                </div>	
-                <div class="col-lg-3 col-md-6">
-                        <div class="single-cat-list">
-                                <img  alt="rabbit"src="{% static 'img/rabt1.jpg' %}" class = "img-fluid"/>
-                                <!--img src="img/rabt2.jpg" alt="" class="img-fluid">-->
-                                <div class="overlay">
-                                  <div class="text">Rabbit9</div>
-                          </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                            <div class="single-cat-list">
-                                    <img  alt="rabbit"src="{% static 'img/rabt1.jpg' %}" class = "img-fluid"/>
-                                    <!--img src="img/rabt2.jpg" alt="" class="img-fluid">-->
-                                    <div class="overlay">
-                                      <div class="text">Rabbit10</div>
+                        <div class="card">
+                                <div class="card-body">
+                                  <h5 class="card-title">{{rabbit.name}}</h5>
+                                  <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                                </div>
+                               <a href="bunnyprofile/{{ rabbit.id }}/"> <img class="card-img-bottom" src="/{{rabbit.image.url}}" alt="Card image cap"></a>
                               </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6">
-                                <div class="single-cat-list">
-                                        <img  alt="rabbit"src="{% static 'img/rabt1.jpg' %}" class = "img-fluid"/>
-                                        <!--img src="img/rabt2.jpg" alt="" class="img-fluid">-->
-                                        <div class="overlay">
-                                          <div class="text">Rabbit11</div>
-                                  </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-3 col-md-6">
-                                    <div class="single-cat-list">
-                                            <img  alt="rabbit"src="{% static 'img/rabt1.jpg' %}" class = "img-fluid"/>
-                                            <!--img src="img/rabt2.jpg" alt="" class="img-fluid">-->
-                                            <div class="overlay">
-                                              <div class="text">Rabbit12</div>
-                                      </div>
-                                    </div>
-                                </div>
-
-                
+                    <!-- <div class="single-cat-list">
+                            <img  alt="rabbit"src="/{{rabbit.image.url}}" class = "img-fluid"/>
+                            <div class="overlay">
+                              <div class="text">{{rabbit.name}}</div>
+                      </div>
+                    </div> -->
+                </div>
+                {% endfor %}
             </div>
         </div>	
     </section>

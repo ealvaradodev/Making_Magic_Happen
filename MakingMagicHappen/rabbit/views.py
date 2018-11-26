@@ -2,6 +2,7 @@ from django.shortcuts import render_to_response, render, redirect
 from django.views import generic
 from django.contrib.auth.models import User
 from .forms import EmailServiceForm, newUserForm, changingUserInfoForm
+from .models import rabbitProfile
 from django.views.generic import FormView, TemplateView
 from django.http import JsonResponse, HttpResponseRedirect
 from django.core.mail import BadHeaderError, send_mail
@@ -23,52 +24,26 @@ def register(request):
         print(form.cleaned_data)
         newUser = User(**form.cleaned_data)
         newUser.save()
+        return redirect('/post/new/')
     context = {
         "form" : form
     }
     return render(request, 'rabbit/register.html', context)
 
 def changingUserInfo(request, id):
-    form = changingUserInfoForm(request.POST or None)
     user = User.objects.get(id=id)
+    form = changingUserInfoForm(request.POST or None, initial={
+        'username' : user.username,
+        'password' : user.password,
+        'email'    : user.email,
+        'first_name' : user.first_name,
+        'last_name' : user.last_name,
+        'is_superuser' : user.is_superuser
+    })
     if form.is_valid():
-        print(form.cleaned_data)
-        if ('username' in form.cleaned_data) != '':
-            newUsername = form.cleaned_data['username']
-        else:
-            newUsername = user.username
-
-        if ('password' in form.cleaned_data) != '':
-            newPassword = form.cleaned_data['password']
-        else:
-            newPassword = user.password
-
-        if ('email' in form.cleaned_data) != '':
-            print(form.cleaned_data['email'])
-            newEmail = form.cleaned_data['email']
-        else:
-            newEmail = user.email
-
-        if ('first_name' in form.cleaned_data) != '':
-            newFirstName = form.cleaned_data['first_name']
-        else:
-            newFirstName = user.first_name
-        
-        if ('last_name' in form.cleaned_data) != '':
-            newLastName = form.cleaned_data['last_name']
-        else:
-            newLastName = user.last_name
-        user = User(
-            id = id, 
-            username = newUsername, 
-            password = newPassword, 
-            email = newEmail, 
-            first_name = newFirstName, 
-            last_name = newLastName,
-            is_superuser = form.cleaned_data['is_superuser']
-            )
+        user = User(id = id, **form.cleaned_data)
         user.save()
-        return redirect("../../../post/new/")
+        return redirect("/post/new/")
     context = {
         "changingForm" : form,
         "user" : user
@@ -87,7 +62,7 @@ def userDelete(request, id):
     user = User.objects.get(id=id)
     if request.method == "POST":
         user.delete()
-        return redirect('../../../post/new/')
+        return redirect('/post/new/')
     context = {
         "user": user
     }
@@ -96,6 +71,19 @@ def userDelete(request, id):
 def about(request):
     return render(request, 'rabbit/aboutUs.html')
 
+class rabbit_views(generic.ListView):
+    template_name='rabbit/rabbits.html'
+    context_object_name = 'all_rabbit_list'
+    queryset = rabbitProfile.objects.all()
+
+def eachRabbit(request,id):
+    rabbit = rabbitProfile.objects.get(id = id)
+    if request.method == "POST":
+        return redirect('/post/new/')
+    context ={
+        'rabbit' : rabbit
+    }
+    return render(request, 'rabbit/bunnyprofile.html', context)
 #Enter email address
 #Enter your Subject
 #Message
