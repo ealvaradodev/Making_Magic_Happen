@@ -17,8 +17,8 @@
                 <h1 class="text-white">
                     Rabbit Form				
                 </h1>	
-                <p class="text-white link-nav"><a href="{% url 'rabbit:home'%}">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="{% url 'rabbit:rabbitsubmission' %}"> Rabbit Submission Form</a></p>
-            </div>	
+                <p class="text-white link-nav"><a href="{% url 'rabbit:home'%}">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="./"> Rabbit Submission Form</a></p>
+            </div>
         </div>
     </div>
 </section>
@@ -31,7 +31,17 @@
     <div class="container-fluid">
         <div class="row align-items-center">	
             <div class="col-lg-6 home-about-left no-padding">
-                    {% include 'rabbit/includes/image_upload.html' %}
+                <form action = '.' method = 'POST'> 
+                    <div style="text-align: center;">
+                        <div style="display: inline-block; text-align: right;">
+                            {% csrf_token %} 
+                            {{ form.as_p }} 
+                        </div>
+                    </div>
+                    <div style="display: inline-block; text-align: center;">
+                        <input type="submit" value='Save' onclick="clicked(event)" />
+                    </div>	
+                </form>
             </div>
         </div>
     </div>	
@@ -39,5 +49,17 @@
 <br>
 <br>
 <br>
-<!-- End home-about1 Area -->	
+<script>
+    function clicked(e){
+        //if(!confirm('Are you sure?'))e.preventDefault();
+        var user_choice = window.confirm('Would you like to continue?');
+
+        if(user_choice==true) {
+            window.alert('The bunny profile was created.');
+            element.submit("./");
+        } else {
+            return false;
+        }
+    }
+</script>
 {% endblock%}

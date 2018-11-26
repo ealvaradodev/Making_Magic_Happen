@@ -1,7 +1,7 @@
 from django.shortcuts import render_to_response, render, redirect
 from django.views import generic
 from django.contrib.auth.models import User
-from .forms import EmailServiceForm, newUserForm, changingUserInfoForm
+from .forms import EmailServiceForm, newUserForm, changingUserInfoForm, rabbitSubmissionForm
 from .models import rabbitProfile
 from django.views.generic import FormView, TemplateView
 from django.http import JsonResponse, HttpResponseRedirect
@@ -102,3 +102,16 @@ def emailService(request):
                 return HttpResponse('Invalid header found.')
             return redirect('/contact')
     return render(request, "rabbit/contact.html", {'form':form})
+
+
+def rabbitSubmission(request):
+    form = rabbitSubmissionForm(request.POST or None)
+    if form.is_valid():
+        print(form.cleaned_data)
+        rabbit = rabbitProfile(**form.cleaned_data)
+        rabbit.save()
+        return redirect('./')
+    context = {
+        "form" : form
+    }
+    return render(request, 'rabbit/rabbit_submission.html', context)   

@@ -17,11 +17,14 @@ class rabbitProfile(models.Model):
     Gender = models.CharField(max_length= 6)
     Age = models.CharField(max_length= 10)
     Size = models.CharField(max_length= 10)
-    Spayed_Neutered= models.CharField(max_length=5)
+    Spayed_Neutered = models.CharField(max_length=5)
     Location = models.CharField(max_length=300, default='')
     about = models.TextField()
     profile_createdDate = models.DateTimeField(auto_now_add=True)
-    image = models.ImageField(upload_to='rabbit_image', blank= True)
+    Picture = models.ImageField(upload_to='rabbit_image', blank= True)
+
+    class Meta:
+        db_table='rabbit_info'
 
 
 #from django.contrib.auth.models import User
