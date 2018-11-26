@@ -61,7 +61,7 @@ AUTHENTICATION_BACKENDS = [
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [r'C:\Users\MylaMoore\Desktop\Making_Magic_Happen\MakingMagicHappen\rabbit\templates\rabbit'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

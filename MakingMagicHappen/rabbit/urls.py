@@ -23,5 +23,8 @@ urlpatterns = [
     url(r'^calendar/$', TemplateView.as_view(template_name='rabbit/calendar.html'), name='calendar'),
     url(r'^register/$', CreateView.as_view(template_name='rabbit/register.html',form_class=UserCreationForm, success_url='/'),name='register'),
     path('contact/', views.emailService, name='contact'),
+    url(r'^register/$', CreateView.as_view(template_name='rabbit/register.html',form_class=UserCreationForm, success_url='/')),
+    url('post/new/', views.register, name='register'),
+    url(r'^submission/$', TemplateView.as_view(template_name = 'submission.html'), name = 'submission')
 ]
 

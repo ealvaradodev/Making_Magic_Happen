@@ -1,0 +1,71 @@
+{% extends 'rabbit/base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+    form label{
+
+        display: inline-block;
+        width: 100px;
+        font-weight: bold;
+    }
+</style>
+
+<section class="banner-area relative" id="home"> 
+    <div class="container"> 
+        <div class="row fullscreen d-flex align-items-center justify-content-start">	 
+            <form action = "{% url 'rabbit:submission' %}" method = "POST"> 
+                    {% csrf_token %} 
+                    {{ form }} 
+                <label for="rabbitname"> Rabbit Name </label>
+                <input id = "rabbitname" type="text" name = "rabbitname" value = "{{current_name}}"> 
+                <br/>
+                <label for="breed"> Breed </label>
+                <input id = "breed" type="text" name = "breed" value = "{{current_breed}}">
+                <br/>
+                <label for="gender"> Gender </label>
+                <input id = "gender" type="text" name = "gender" value = "{{current_gender}}">
+                <br/>
+                <label for="age"> Age </label>
+                <input id = "age" type="text" name = "age" value = "{{current_age}}">
+                <br/>
+                <label for="size"> Size </label>
+                <input id = "size" type="text" name = "size" value = "{{current_size}}">
+                <br/>
+                <label for="additionalinfo"> Additional Info </label>
+                <input id = "additionalinfo" type="text" name = "additionalinfo" value = "{{current_info}}">
+                <br/>
+                <input id="id_image" type="file" class="" name="image"> 
+
+                <button type="Submit">Submit</button>
+
+               
+            </form>                                   
+        </div> 
+    </div> 
+</section> 
+
+<!--<form action="{% url 'rabbit:submission' %}" method="post">
+    {% csrf_token %}
+    {{form}}
+    <fieldset>
+      {{ form.non_field_errors }}
+      {% for field in form %}
+      {{ field.errors }}
+      {% comment %} Displaying checkboxes differently {% endcomment %}
+      {% if field.name == 'tos' %}
+      <p class="checkbox">
+      <label for="id_{{ field.name }}">{{ field }} {{ field.label }}</label>
+      </p>
+      {% else %}
+      <p>
+      {{ field.label_tag }} 
+      {{ field }}
+      </p>
+      {% endif %}
+      {% endfor %}
+    </fieldset>
+    <button type="Submit">Submit</button>
+  </form> -->
+
+{% endblock %}

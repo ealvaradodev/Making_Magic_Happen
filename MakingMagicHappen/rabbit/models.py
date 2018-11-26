@@ -33,4 +33,7 @@ class calendarEvent(models.Model):
 #    noitem = models.IntegerField()
 #   purdate = models.DateTimeField("purchase-date")
 #    deldate = models.DateTimeField("delivary-date")
-#end of stuff to add images
+#end of stuff to add image
+
+#class uploadPic(models.Model):
+  #   model_pic = models.ImageField(upload_to = 'pic_folder/', default = 'pic_folder/None/no-img.jpg')
