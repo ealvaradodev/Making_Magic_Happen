@@ -3,30 +3,33 @@
  
 {% block content %} 
 
-
-<section class="banner-area relative" id="home"> 
-    <div class="container"> 
-        <div class="overlay overlay-bg"></div> 
-        <div class="row fullscreen d-flex align-items-center justify-content-start">  
-                <form action = '.' method = 'POST'> 
-                        {% csrf_token %} 
-                        {{ form.as_p }} 
-                        <input type="submit" value='Save' onclick="clicked(event)"/>
-                        <li><a href="{% url 'rabbit:deleting' %}"> Delete User or Change Information </a></li>
-                </form> 
-        </div> 
-    </div> 
-</section> 
-
-<div style="background-color:#ebd5d5; text-align:center; vertical-align: middle; padding: 20 px 47px;">	 
-    <form action = '.' method = 'POST'> 
-        {% csrf_token %} 
-        {{ form.as_p }} 
-        <input type="submit" value='Save' onclick="clicked(event)"/>
-        <li><a href="{% url 'rabbit:deleting' %}"> Delete User or Change Information </a></li>
-    </form>   
-</div>
-
+<section class="banner-area relative" id="home">	
+    <div class="overlay overlay-bg"></div>
+    <div class="container">				
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="about-content col-lg-12">
+                <h1 class="text-white">
+                    Register New User			
+                </h1>	
+                <p class="text-white link-nav"><a href="{% url 'rabbit:home'%}">Home </a>  <span class="lnr lnr-arrow-right"></span><a href="{% url 'rabbit:about' %}"> About Us</a></p>
+            </div>	
+        </div>
+    </div>
+</section>
+<!-- End banner Area -->	
+<br>
+<br>
+<br>
+<section class="home-about-area" style="text-align:center; vertical-align: middle; padding: 20 px 47px;">
+    <div class="container-fluid">
+        <form action = '.' method = 'POST'> 
+            {% csrf_token %} 
+            {{ form.as_p }} 
+            <input type="submit" value='Save' onclick="clicked(event)"/>
+            <li><a href="{% url 'rabbit:deleting' %}"> Delete User or Change Information </a></li>
+        </form> 
+    </div>	
+</section>
 <script>
     function clicked(e){
         //if(!confirm('Are you sure?'))e.preventDefault();
