@@ -1,0 +1,36 @@
+{% extends 'rabbit/base.html' %} 
+{% load static %} 
+ 
+{% block content %} 
+
+<section class="banner-area relative" id="home">	
+        <div class="overlay overlay-bg"></div>
+        <div class="container">				
+            <div class="row d-flex align-items-center justify-content-center">
+                <div class="about-content col-lg-12">
+                    <h1 class="text-white">
+                        Register New User			
+                    </h1>	
+                    <p class="text-white link-nav"><a href="{% url 'rabbit:home'%}">Home </a>  <span class="lnr lnr-arrow-right"></span><a href="{% url 'rabbit:about' %}"> About Us</a></p>
+                </div>	
+            </div>
+        </div>
+    </section>
+    <!-- End banner Area -->	
+    <br>
+    <br>
+    <br>
+    <section class="home-about-area" style="text-align:center; vertical-align: middle; padding: 20 px 47px;">
+        <div class="container-fluid">
+            <p>Which User do you want to delete or changing information of?</p>
+            {% csrf_token %} 
+            {% for instance in object_list %}
+                <p>
+                    {{ instance.username }}:
+                    <button type="button"><a href='http://127.0.0.1:8000/rabbit/userDeleting/{{ instance.id }}/' >Delete {{instance.username}}</a></button>
+                    <button type="button"><a href='http://127.0.0.1:8000/rabbit/userChanging/{{ instance.id }}/' >Change {{instance.username}}'s Information</a></button>
+                </p>
+            {% endfor %} 
+        </div>	
+    </section>
+{% endblock %} 
