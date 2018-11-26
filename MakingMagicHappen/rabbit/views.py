@@ -7,13 +7,10 @@ from django.views.generic import FormView, TemplateView
 from django.http import JsonResponse, HttpResponseRedirect
 from django.core.mail import BadHeaderError, send_mail
 from django.http import HttpResponse, HttpResponseRedirect
-<<<<<<< HEAD
 # from .forms import newUserForm
 from .forms import newUserForm
 from .forms import submissionForm
 
-=======
->>>>>>> 0a4a3e7d6e91df2784984199f44d5af023402e15
 
 # Create your views here.
 def home(request):
