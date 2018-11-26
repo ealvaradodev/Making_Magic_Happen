@@ -25,7 +25,7 @@ class submissionForm(forms.Form):
     age = forms.CharField(label = 'Age', max_length=8)
     size = forms.CharField(label = 'Size', widget = forms.Select(choices = bunnysize))
     additionalinfo = forms.TextInput()
-    picture = forms.ImageField()
+    #picture = forms.ImageField()
 
 
     

@@ -1,31 +1,23 @@
 {% extends 'rabbit/base.html' %}
 {% block content %}
 {% load static %}
-<section class="banner-area relative" id="home">
-    <div class="container">
-        <div class="overlay overlay-bg"></div>
-        <div class="row fullscreen d-flex align-items-center justify-content-start">
-            <div class="banner-content col-lg-8 col-md-12">
-                <h1 class="text-uppercase">
-                    Adopt Us. <br>
-                    We need new homes!		
-                </h1>
-                <p class="text-white sub-head">
-                    
-                </p>
-                <a href="#" class="primary-btn header-btn text-uppercase">Find a forever friend</a>
-            </div>											
+<!--Start banner Area-->
+<section class="banner-area relative" id="home">	
+    <div class="overlay overlay-bg"></div>
+    <div class="container">				
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="about-content col-lg-12">
+                <h1 class="text-white">
+                    Adopt Don't Shop!				
+                </h1>	
+                <p class="text-white link-nav"><a href="{% url 'rabbit:home'%}">Home </a>  <span class="lnr lnr-arrow-right"></span> <a href="#"> Adopt</a>  <span class="lnr lnr-arrow-right"></span> <a href="{% url 'rabbit:rabbits'%}">Rabbit</a></p>
+            </div>	
         </div>
     </div>
 </section>
 <!-- End banner Area -->
-
-
-<!-- Start image-carusel Area -->
-
-
 <!-- Start callto-top Area -->
-<section class="callto-top-area section-gap">
+<section class="callto-top-area">
     <div class="container">
         <div class="row justify-content-between callto-top-wrap pt-40 pb-40">
             <div class="col-lg-8 callto-top-left">
@@ -43,140 +35,23 @@
 <section class="cat-list-area section-gap">
         <div class="container">
             <div class="row">
+                {% for rabbit in all_rabbit_list %}
                 <div class="col-lg-3 col-md-6">
-                    <div class="single-cat-list">
-                            <img  alt="rabbit"src="{% static 'img/rabt1.jpg' %}" class = "img-fluid"/>
-                            <!--img src="img/rabt2.jpg" alt="" class="img-fluid">-->
-                            <div class="overlay">
-                              <div class="text">Rabbit1</div>
-                      </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-cat-list">
-                            <img  alt="rabbit"src="{% static 'img/rabt2.jpg' %}" class = "img-fluid"/>
-                      <!--img src="img/rabt2.jpg" alt="" class="img-fluid">-->
-                      <div class="overlay">
-                        <div class="text">Rabbit2</div>
-                      </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-cat-list">
-                            <img  alt="rabbit"src="{% static 'img/rabt3.jpg' %}" class = "img-fluid"/>
-                            <div class="overlay">
-                              <div class="text">Rabbit3</div>
-                      </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-cat-list">
-                            <img  alt="rabbit"src="{% static 'img/rabt4.jpg' %}" class = "img-fluid"/>
-                            <div class="overlay">
-                              <div class="text">Rabbit4</div>
-                      </div>
-                    </div>
-                </div>	
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-cat-list">
-                            <img  alt="rabbit"src="{% static 'img/rabt5.jpg' %}" class = "img-fluid"/>
-                            <div class="overlay">
-                              <div class="text">Rabbit5</div>
-                      </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-cat-list">
-                            <img  alt="rabbit"src="{% static 'img/rabt6.jpg' %}" class = "img-fluid"/>
-                            <div class="overlay">
-                              <div class="text">Rabbit6</div>
-                      </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-cat-list">
-                            <img  alt="rabbit"src="{% static 'img/rabt7.jpg' %}" class = "img-fluid"/>
-                            <div class="overlay">
-                              <div class="text">Rabbit7</div>
-                      </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6"> 
-                    <div class="single-cat-list">
-                            <img  alt="rabbit"src="{% static 'img/rabt8.jpg' %}" class = "img-fluid"/>
-                            <div class="overlay">
-                              <div class="text">Rabbit8</div>
-                      </div>
-                    </div>
-                </div>	
-                <div class="col-lg-3 col-md-6">
-                        <div class="single-cat-list">
-                                <img  alt="rabbit"src="{% static 'img/rabt1.jpg' %}" class = "img-fluid"/>
-                                <!--img src="img/rabt2.jpg" alt="" class="img-fluid">-->
-                                <div class="overlay">
-                                  <div class="text">Rabbit9</div>
-                          </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                            <div class="single-cat-list">
-                                    <img  alt="rabbit"src="{% static 'img/rabt1.jpg' %}" class = "img-fluid"/>
-                                    <!--img src="img/rabt2.jpg" alt="" class="img-fluid">-->
-                                    <div class="overlay">
-                                      <div class="text">Rabbit10</div>
+                        <div class="card" style="margin-bottom:20px">
+                                <div class="card-body">
+                                  <h5 class="card-title">{{rabbit.name}}</h5>
+                                  <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                                </div>
+                               <a href="bunnyprofile/{{ rabbit.id }}/"> <img class="card-img-bottom" src="/{{rabbit.image.url}}" alt="Card image cap"></a>
                               </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6">
-                                <div class="single-cat-list">
-                                        <img  alt="rabbit"src="{% static 'img/rabt1.jpg' %}" class = "img-fluid"/>
-                                        <!--img src="img/rabt2.jpg" alt="" class="img-fluid">-->
-                                        <div class="overlay">
-                                          <div class="text">Rabbit11</div>
-                                  </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-3 col-md-6">
-                                    <div class="single-cat-list">
-                                            <img  alt="rabbit"src="{% static 'img/rabt1.jpg' %}" class = "img-fluid"/>
-                                            <!--img src="img/rabt2.jpg" alt="" class="img-fluid">-->
-                                            <div class="overlay">
-                                              <div class="text">Rabbit12</div>
-                                      </div>
-                                    </div>
-                                </div>
-
-                
+                </div>
+                {% endfor %}
             </div>
         </div>	
     </section>
     <!-- End cat-list Area -->
             
 
-
-
-
-
-
-
-<!-- Start calltoaction Area -->
-<section class="calltoaction-area section-gap relative">
-    <div class="container">
-        <div class="overlay overlay-bg"></div>						
-        <div class="row align-items-center justify-content-center">
-            <h1 class="text-white">Want to help? Become a Volunteer</h1>
-            <p class="text-white">
-                
-            </p>
-            <div class="buttons d-flex flex-row">
-                <a href="#" class="primary-btn text-uppercase">View pdf details</a>
-                <a href="#" class="primary-btn text-uppercase">Register now</a>
-            </div>
-        </div>
-    </div>	
-</section>
-<!-- End calltoaction Area -->
 
 {% endblock %}

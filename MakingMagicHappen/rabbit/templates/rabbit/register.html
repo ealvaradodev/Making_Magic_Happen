@@ -2,17 +2,52 @@
 {% load static %} 
  
 {% block content %} 
-    <section class="banner-area relative" id="home"> 
-            <div class="container"> 
-                <div class="overlay overlay-bg"></div> 
-                <div class="row fullscreen d-flex align-items-center justify-content-start">	 
-                    <form action = "" method = "POST"> 
-                        {% csrf_token %} 
-                        {{ form.as_p }} 
-                        <button type="submit">Sign up</button> 
-                    </form> 
-                    								 
-                </div> 
-            </div> 
-        </section> 
+
+<section class="banner-area relative" id="home">	
+    <div class="overlay overlay-bg"></div>
+    <div class="container">				
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="about-content col-lg-12">
+                <h1 class="text-white">
+                    Register New User			
+                </h1>	
+                <p class="text-white link-nav"><a href="{% url 'rabbit:home'%}">Home </a>  
+                    <span class="lnr lnr-arrow-right"></span><a href="./"> Register New User </a></p>
+            </div>	
+        </div>
+    </div>
+</section>
+<!-- End banner Area -->	
+<br>
+<br>
+<br>
+<section class="home-about-area" style="text-align:center; vertical-align: middle; padding: 20 px 47px;">
+    <div class="container-fluid">
+        <form action = '.' method = 'POST'> 
+            <div style="text-align: center;">
+                <div style="display: inline-block; text-align: right;">
+                    {% csrf_token %} 
+                    {{ form.as_p }} 
+                </div>
+            </div>
+            <div style="display: inline-block; text-align: center;">
+                <input type="submit" value='Save' onclick="clicked(event)" />
+                <p><a href="{% url 'rabbit:deleting' %}">Delete User or Change Information </a></p>
+            </div>	
+        </form>
+    </div> 
+</section>
+<script>
+    function clicked(e){
+        //if(!confirm('Are you sure?'))e.preventDefault();
+        var user_choice = window.confirm('Would you like to continue?');
+
+        if(user_choice==true) {
+            window.alert('User was created.');
+            element.submit("{% url 'rabbit:register' %}");
+        } else {
+            return false;
+        }
+    }
+</script>
 {% endblock %} 
