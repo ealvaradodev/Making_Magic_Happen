@@ -19,7 +19,7 @@
                     <h1 class="text-white">
                         Submission				
                     </h1>	
-                    <p class="text-white link-nav"><a href="{% url 'rabbit:home'%}">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="{% url 'rabbit:submission' %}"> Submission</a></p>
+                    <p class="text-white link-nav"><a href="{% url 'rabbit:home'%}">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="./"> Submission</a></p>
                 </div>	
             </div>
         </div>
@@ -29,62 +29,35 @@
     <div class="container-fluid">
         <div class="row align-items-center">	
             <div class="col-lg-6 home-about-left no-padding">
-                <div style="margin-left:150px; margin-top:30px; margin-bottom: 30px">
-                    <form action = "{% url 'rabbit:submission' %}" method = "POST"> 
+                <div class= "card" style="margin-left:250px; margin-top: 50px; margin-bottom: 30px;">
+                    <form action = '.' method = 'POST'> 
+                        <div style="display: inline-block; text-align: right;">
                             {% csrf_token %} 
-                            {{ form }} 
-                        <label for="rabbitname"> Rabbit Name </label>
-                        <input id = "rabbitname" type="text" name = "rabbitname" value = "{{current_name}}"> 
-                        <br/>
-                        <label for="breed"> Breed </label>
-                        <input id = "breed" type="text" name = "breed" value = "{{current_breed}}">
-                        <br/>
-                        <label for="gender"> Gender </label>
-                        <input id = "gender" type="text" name = "gender" value = "{{current_gender}}">
-                        <br/>
-                        <label for="age"> Age </label>
-                        <input id = "age" type="text" name = "age" value = "{{current_age}}">
-                        <br/>
-                        <label for="size"> Size </label>
-                        <input id = "size" type="text" name = "size" value = "{{current_size}}">
-                        <br/>
-                        <label for="additionalinfo"> Additional Info </label>
-                        <input id = "additionalinfo" type="text" name = "additionalinfo" value = "{{current_info}}">
-                        <br/>
-                        <input id="id_image" type="file" class="" name="image"> 
-        
-                        <button type="Submit">Submit</button>
-        
-                       
-                    </form> 
-                    </div>
+                            {{ form.as_table}} 
+                        </div>
+                    
+                    <div style="display: inline-block; text-align: center;">
+                        <input type="submit" value='Save' onclick="clicked(event)" />
+                    </div>	
+                    </form>
+                </div> 
+            </div>
    
             </div>
-        </div>
-    </div>	
+        </div>	
 </section>
-
-<!--<form action="{% url 'rabbit:submission' %}" method="post">
-    {% csrf_token %}
-    {{form}}
-    <fieldset>
-      {{ form.non_field_errors }}
-      {% for field in form %}
-      {{ field.errors }}
-      {% comment %} Displaying checkboxes differently {% endcomment %}
-      {% if field.name == 'tos' %}
-      <p class="checkbox">
-      <label for="id_{{ field.name }}">{{ field }} {{ field.label }}</label>
-      </p>
-      {% else %}
-      <p>
-      {{ field.label_tag }} 
-      {{ field }}
-      </p>
-      {% endif %}
-      {% endfor %}
-    </fieldset>
-    <button type="Submit">Submit</button>
-  </form> -->
-
 {% endblock %}
+{% scriptblock %}
+<script>
+    function clicked(e){
+        //if(!confirm('Are you sure?'))e.preventDefault();
+        var user_choice = window.confirm('Would you like to continue?');
+         if(user_choice==true) {
+            window.alert('The bunny profile was created.');
+            element.submit("./");
+        } else {
+            return false;
+        }
+    }
+</script>
+{% end scriptblock %}
