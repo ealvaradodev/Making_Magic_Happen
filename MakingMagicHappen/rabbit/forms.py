@@ -25,13 +25,6 @@ class EmailServiceForm(forms.Form):
     subject = forms.CharField(required=True)
     message = forms.CharField(widget=forms.Textarea, required=True)
 
-class newUserForm(forms.Form): 
-    username = forms.CharField(max_length = 150) 
-    password = forms.CharField(max_length = 128) 
-    email = forms.EmailField(max_length = 254) 
-    first_name = forms.CharField(max_length = 30) 
-    last_name = forms.CharField(max_length = 150)
-
 class submissionForm(forms.Form):
     bunnysize = [('Small', 'Medium', 'Large')]
 

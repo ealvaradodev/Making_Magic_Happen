@@ -1,11 +1,11 @@
 {% extends 'rabbit/base.html' %}
     {% load static %}
     {% block csslink %}
-    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
+    <!-- <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script> -->
     <script src="http://code.jquery.com/jquery-1.11.1.min.js">
     </script>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet"> -->
 
 <script>
     $(document).ready(function() {
@@ -23,26 +23,6 @@
       
     /* initialize the external events
     -----------------------------------------------------------------*/
-
-    $('#external-events div.external-event').each(function() {
-    
-        // create an Event Object (http://arshaw.com/fullcalendar/docs/event_data/Event_Object/)
-        // it doesn't need to have a start or end
-        var eventObject = {
-            title: $.trim($(this).text()) // use the element's text as the event title
-        };
-        
-        // store the Event Object in the DOM element so we can get to it later
-        $(this).data('eventObject', eventObject);
-        
-        // make the event draggable using jQuery UI
-        $(this).draggable({
-            zIndex: 999,
-            revert: true,      // will cause the event to go back to its
-            revertDuration: 0  //  original position after the drag
-        });
-        
-    });
 
 
     /* initialize the calendar
@@ -116,43 +96,30 @@
         events: [
             {
                 title: 'All Day Event',
-                start: new Date(y, m, 1)
+                start: new Date(y, m, 5)
             },
             {
                 id: 999,
                 title: 'Repeating Event',
-                start: new Date(y, m, d-3, 16, 0),
+                start: new Date(y, m, d-7, 16, 0),
                 allDay: false,
                 className: 'info'
             },
             {
                 id: 999,
                 title: 'Repeating Event',
-                start: new Date(y, m, d+4, 16, 0),
+                start: new Date(y, m, d+8, 16, 0),
                 allDay: true,
                 className: 'info'
             },
             {
                 title: 'Meeting',
-                start: new Date(y, m, d, 10, 30),
+                start: new Date(y, m, d, 14, 30),
                 allDay: false,
                 className: 'important'
             },
             {
-                title: 'Lunch',
-                start: new Date(y, m, d, 12, 0),
-                end: new Date(y, m, d, 14, 0),
-                allDay: false,
-                className: 'important'
-            },
-            {
-                title: 'Birthday Party',
-                start: new Date(y, m, d+1, 19, 0),
-                end: new Date(y, m, d+1, 22, 30),
-                allDay: false,
-            },
-            {
-                title: 'Click for Google',
+                title: 'Rabbit care',
                 start: new Date(y, m, 28),
                 end: new Date(y, m, 29),
                 url: 'https://ccp.cloudaccess.net/aff.php?aff=5188',
@@ -166,45 +133,6 @@
 
 </script>
 <style>
-    #wrap {
-        width: 1100px;
-        margin: 0 auto;
-    }
-
-    #external-events {
-        float: left;
-        width: 150px;
-        padding: 0 10px;
-        text-align: left;
-    }
-
-    #external-events h4 {
-        font-size: 16px;
-        margin-top: 0;
-        padding-top: 1em;
-    }
-
-    .external-event {
-        /* try to mimick the look of a real event */
-        margin: 10px 0;
-        padding: 2px 4px;
-        background: #3366CC;
-        color: #fff;
-        font-size: .85em;
-        cursor: pointer;
-    }
-
-    #external-events p {
-        margin: 1.5em 0;
-        font-size: 11px;
-        color: #666;
-    }
-
-    #external-events p input {
-        margin: 0;
-        vertical-align: middle;
-    }
-
     #calendar {
         /* 		float: right; */
         margin: 0px auto;
@@ -212,9 +140,6 @@
         background-color: #FFFFFF;
         border-radius: 6px;
         box-shadow: 0 1px 2px #C3C3C3;
-        -webkit-box-shadow: 0px 0px 21px 2px rgba(0, 0, 0, 0.18);
-        -moz-box-shadow: 0px 0px 21px 2px rgba(0, 0, 0, 0.18);
-        box-shadow: 0px 0px 21px 2px rgba(0, 0, 0, 0.18);
     }
 </style>
 {% endblock csslink %}
@@ -240,7 +165,7 @@
             <div class="col-lg-6 home-about-left no-padding">
                 <div class="container">
                 <div class="overlay overlay-bg"></div>
-                    <div id='calendar' style="margin-top: 100px"></div>											
+                    <div id='calendar' style="margin-top: 100px; margin-left: 150px"></div>											
                 </div>
             </div>
         </div>
@@ -249,7 +174,5 @@
     {% endblock %}
 
     {% block scriptlink %}
-    
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <script src="{% static 'js/calendar.js'%}"></script>
     {% endblock scriptlink %}
