@@ -31,12 +31,19 @@
                 </div>
             </div>
             <div style="display: inline-block; text-align: center;">
-                <input type="submit" value='Save' onclick="clicked(event)" />
-                <button><a href="{% url 'rabbit:deleting' %}">Delete User or Change Information </a></button>
+                <input type="submit" value='Save' class ="primary-btn text-uppercase" onclick="clicked(event)" />
+                <button class="primary-btn text-uppercase" ><a class="primary-btn text-uppercase" href="{% url 'rabbit:deleting' %}">Delete User or Change Information </a></button>
             </div>	
         </form>
     </div> 
 </section>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
 <script>
     function clicked(e){
         //if(!confirm('Are you sure?'))e.preventDefault();
