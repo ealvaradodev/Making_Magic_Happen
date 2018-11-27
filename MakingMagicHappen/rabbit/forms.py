@@ -25,16 +25,16 @@ class EmailServiceForm(forms.Form):
     subject = forms.CharField(required=True)
     message = forms.CharField(widget=forms.Textarea, required=True)
 
-class submissionForm(forms.Form):
-    bunnysize = [('Small', 'Medium', 'Large')]
-
-    rabbitname = forms.CharField(label = 'Rabbit_Name', max_length=100)
-    breed = forms.CharField(label = 'Breed', max_length=150)
-    gender = forms.CharField(label = 'Gender', max_length=8)
-    age = forms.CharField(label = 'Age', max_length=8)
-    size = forms.CharField(label = 'Size', widget = forms.Select(choices = bunnysize))
-    additionalinfo = forms.TextInput()
-    #picture = forms.ImageField()
+class rabbitSubmissionForm(forms.Form):
+    name = forms.CharField()
+    Breed = forms.CharField()
+    Gender = forms.CharField()
+    Age = forms.IntegerField(max_value=100, required = False)
+    Size = forms.CharField(required = False)
+    Spayed_Neutered = forms.CharField(max_length=5)
+    Location = forms.CharField(max_length=300)
+    about = forms.CharField(widget=forms.Textarea)
+    Picture = forms.ImageField()
 
 
     

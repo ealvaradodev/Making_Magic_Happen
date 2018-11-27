@@ -1,16 +1,12 @@
 from django.shortcuts import render_to_response, render, redirect
 from django.views import generic
 from django.contrib.auth.models import User
-from .forms import EmailServiceForm, newUserForm, changingUserInfoForm, submissionForm
+from .forms import EmailServiceForm, newUserForm, changingUserInfoForm, rabbitSubmissionForm
 from .models import rabbitProfile
 from django.views.generic import FormView, TemplateView
 from django.http import JsonResponse, HttpResponseRedirect
 from django.core.mail import BadHeaderError, send_mail
 from django.http import HttpResponse, HttpResponseRedirect
-# from .forms import newUserForm
-from .forms import newUserForm
-from .forms import submissionForm
-
 
 # Create your views here.
 def home(request):
@@ -133,23 +129,23 @@ def register(request):
 #    }
 #    return render(request, 'rabbit/register.html', {'form': form})
 
-def submission(request):
-        if request.method == 'POST':
-            form = submissionForm(request.POST)
-            #form = ImageUploadForm(request.POST, request.FILES)
-            if form.is_valid():
-                name = form.cleaned_data['name']
-                breed = form.cleaned_data['breed']
-                gender = form.cleaned_data['gender']
-                age = form.cleaned_data['age']
-                additionalinfo = form.cleaned_data['additionalinfo']
-                #m = ExampleModel.objects.get(pk=course_id)
-                #m.model_pic = form.cleaned_data['image']
-                #m.save()
-                return HttpResponseRedirect('/Rabbit Entered/')
-        else:
-            form = submissionForm()
-        return render(request, 'submission.html', {'form': form}) 
+# def submission(request):
+#         if request.method == 'POST':
+#             form = submissionForm(request.POST)
+#             #form = ImageUploadForm(request.POST, request.FILES)
+#             if form.is_valid():
+#                 name = form.cleaned_data['name']
+#                 breed = form.cleaned_data['breed']
+#                 gender = form.cleaned_data['gender']
+#                 age = form.cleaned_data['age']
+#                 additionalinfo = form.cleaned_data['additionalinfo']
+#                 #m = ExampleModel.objects.get(pk=course_id)
+#                 #m.model_pic = form.cleaned_data['image']
+#                 #m.save()
+#                 return HttpResponseRedirect('/Rabbit Entered/')
+#         else:
+#             form = submissionForm()
+#         return render(request, 'rabbit/submission.html', {'form': form}) 
            
 # def submission(request):
 #         if request.method == 'POST':
@@ -168,3 +164,15 @@ def submission(request):
 #         else:
 #             form = submissionForm()
 #         return render(request, 'submission.html', {'form': form}) 
+
+def rabbitSubmission(request):
+    form = rabbitSubmissionForm(request.POST or None)
+    if form.is_valid():
+        print(form.cleaned_data)
+        rabbit = rabbitProfile(**form.cleaned_data)
+        rabbit.save()
+        return redirect('./')
+    context = {
+        "form" : form
+    }
+    return render(request, 'rabbit/rabbit_submission.html', context)
