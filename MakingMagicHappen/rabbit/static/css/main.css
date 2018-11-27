@@ -4128,6 +4128,26 @@ body.mobile-nav-active #mobile-nav-toggle {
   font-size: 13px;
   color: #777;
 }
+/* contact page add*/
+label{
+  text-align: right;
+  margin-left:45px;
+  margin-right:20px;
+}
+input#id_your_Email{
+  margin-left:19px;
+  width:303px;
+}
+input#id_subject{
+  margin-left:40px;
+  width:303px;
+}
+textarea{
+  margin-left:30px;
+}
+.container-fluid{
+  margin-left:200px;
+}
 
 /*
 ################
