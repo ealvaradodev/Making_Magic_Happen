@@ -56,7 +56,6 @@
                           {% if user.is_superuser%}
                             <li><a href="{% url 'rabbit:register' %}"> Register User </a></li>
                           {% endif %}
-                          <li><a href="{% url 'rabbit:rabbitSubmission' %}"> Rabbit Submission Form</a></li>
                           <li class = "menu-has-children"><a href="#">{{user.username}} </a>
                             <ul>
                               <li><a href="{% url 'logout' %}">
