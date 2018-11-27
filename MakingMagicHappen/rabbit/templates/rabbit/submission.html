@@ -19,7 +19,7 @@
                     <h1 class="text-white">
                         Submission				
                     </h1>	
-                    <p class="text-white link-nav"><a href="{% url 'rabbit:home'%}">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="./"> Submission</a></p>
+                    <!-- <p class="text-white link-nav"><a href="{% url 'rabbit:home'%}">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="./"> Submission</a></p> -->
                 </div>	
             </div>
         </div>
@@ -29,11 +29,12 @@
     <div class="container-fluid">
         <div class="row align-items-center">	
             <div class="col-lg-6 home-about-left no-padding">
-                <div class= "card" style="margin-left:250px; margin-top: 50px; margin-bottom: 30px;">
+                <div class= "card" style="margin-left:250px; margin-top: 50px; margin-bottom: 30px; align-content: center; width: 500px">
+                    <h5 > Making Magic Happen </h5>
                     <form action = '.' method = 'POST'> 
-                        <div style="display: inline-block; text-align: right;">
+                        <div style="display: inline-block; text-align: center; margin-right: 50px; margin-top: 30px; margin-bottom: 30px">
                             {% csrf_token %} 
-                            {{ form.as_table}} 
+                            {{ form.as_p}} 
                         </div>
                     
                     <div style="display: inline-block; text-align: center;">
@@ -47,7 +48,8 @@
         </div>	
 </section>
 {% endblock %}
-{% scriptblock %}
+{% block scriptlink %}
+
 <script>
     function clicked(e){
         //if(!confirm('Are you sure?'))e.preventDefault();
@@ -60,4 +62,4 @@
         }
     }
 </script>
-{% end scriptblock %}
+{% endblock scriptlink %}

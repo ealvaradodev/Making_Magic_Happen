@@ -21,36 +21,16 @@ class rabbitProfile(models.Model):
     Location = models.CharField(max_length=300, default='')
     about = models.TextField()
     profile_createdDate = models.DateTimeField(auto_now_add=True)
-    image = models.ImageField(upload_to='rabbit_image', blank= True)
+    image = models.CharField(max_length=400)
 
-   
-
-
-#from django.contrib.auth.models import User
-#from PIL import Image
-
-# Create your models here.
-#start of stuff to add images
-#class Catagory(models.Model):
-   # cname = models.CharField(max_length =200)
-  #  purdate = models.DateTimeField('purchase-date')
- #   createdby = models.ForeignKey(User)
-
-#class Product (models.Mode):
- #  pname = models.CharField(max_length=200)    
- #  discription = models.CharField(max_length=500)
- #  pirce = models.IntegerField()
- #  noitem = models.IntegerField()
- #   createdby = models.ForeignKey(User)
- #   cid = models.ImageField(upload_to='photo')
-
-#class Cart(modles.Mode):
-#    uid = models.ForeignKey(User)
-#    pid = models.ForeignKey(Product)
-#    noitem = models.IntegerField()
-#   purdate = models.DateTimeField("purchase-date")
-#    deldate = models.DateTimeField("delivary-date")
-#end of stuff to add image
-
-#class uploadPic(models.Model):
-  #   model_pic = models.ImageField(upload_to = 'pic_folder/', default = 'pic_folder/None/no-img.jpg')
+class gunieaProfile(models.Model):
+    name = models.CharField(max_length= 42, blank= False)
+    Breed = models.CharField(max_length= 30)
+    Gender = models.CharField(max_length= 6)
+    Age = models.CharField(max_length= 10)
+    Size = models.CharField(max_length= 10)
+    Spayed_Neutered = models.CharField(max_length=5)
+    Location = models.CharField(max_length=300, default='')
+    about = models.TextField()
+    profile_createdDate = models.DateTimeField(auto_now_add=True)
+    image = models.CharField(max_length=400)

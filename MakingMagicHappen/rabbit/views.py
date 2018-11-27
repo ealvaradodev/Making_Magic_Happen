@@ -1,8 +1,8 @@
 from django.shortcuts import render_to_response, render, redirect
 from django.views import generic
 from django.contrib.auth.models import User
-from .forms import EmailServiceForm, newUserForm, changingUserInfoForm, rabbitSubmissionForm
-from .models import rabbitProfile
+from .forms import EmailServiceForm, newUserForm, changingUserInfoForm
+from .models import rabbitProfile, gunieaProfile
 from django.views.generic import FormView, TemplateView
 from django.http import JsonResponse, HttpResponseRedirect
 from django.core.mail import BadHeaderError, send_mail
@@ -71,11 +71,15 @@ def userDelete(request, id):
 def about(request):
     return render(request, 'rabbit/aboutUs.html')
 
+# rabbit view will get all the rabbit info from the rabbitProfile
+# modle and we can acceaa the object as all_rabbit_list from rabbits.html page 
 class rabbit_views(generic.ListView):
     template_name='rabbit/rabbits.html'
     context_object_name = 'all_rabbit_list'
     queryset = rabbitProfile.objects.all()
 
+
+# I should be able to  access each rabbit profile from bunnyprofile.html
 def eachRabbit(request,id):
     rabbit = rabbitProfile.objects.get(id = id)
     if request.method == "POST":
@@ -84,6 +88,26 @@ def eachRabbit(request,id):
         'rabbit' : rabbit
     }
     return render(request, 'rabbit/bunnyprofile.html', context)
+
+#  view will get all the rabbit info from the rabbitProfile
+# modle and we can acceaa the object as all_rabbit_list from rabbits.html page 
+class guniea_views(generic.ListView):
+    template_name='rabbit/gunieapigs.html'
+    context_object_name = 'all_guniea_list'
+    queryset = gunieaProfile.objects.all()
+
+
+# I should be able to  access each rabbit profile from bunnyprofile.html
+def eachGuniea(request,id):
+    guniea = gunieaProfile.objects.get(id = id)
+    if request.method == "POST":
+        return redirect('/post/new/')
+    context ={
+        'guniea' : guniea
+    }
+    return render(request, 'rabbit/gunieaprofile.html', context)
+
+
 #Enter email address
 #Enter your Subject
 #Message
@@ -104,75 +128,13 @@ def emailService(request):
     return render(request, "rabbit/contact.html", {'form':form})
 
 
-
-def register(request):
-     form = newUserForm()
-     if request.method == 'POST':
-         form = newUserForm(request.POST)
-         if form.is_valid():
-             print(form.cleaned_data)
-             newUser = User(**form.cleaned_data)
-             newUser.save()
-         else:
-             print(form.errors)
-     context = {
-         "form" : form
-     }
-     return render(request, 'rabbit/register.html', {'form': form})
-#        print(form.cleaned_data)
-#        newUser = User(**form.cleaned_data)
-#        newUser.save()
-#       else:
-#           print(form.errors)
-#    context = {
-#        "form" : form
-#    }
-#    return render(request, 'rabbit/register.html', {'form': form})
-
-# def submission(request):
-#         if request.method == 'POST':
-#             form = submissionForm(request.POST)
-#             #form = ImageUploadForm(request.POST, request.FILES)
-#             if form.is_valid():
-#                 name = form.cleaned_data['name']
-#                 breed = form.cleaned_data['breed']
-#                 gender = form.cleaned_data['gender']
-#                 age = form.cleaned_data['age']
-#                 additionalinfo = form.cleaned_data['additionalinfo']
-#                 #m = ExampleModel.objects.get(pk=course_id)
-#                 #m.model_pic = form.cleaned_data['image']
-#                 #m.save()
-#                 return HttpResponseRedirect('/Rabbit Entered/')
-#         else:
-#             form = submissionForm()
-#         return render(request, 'rabbit/submission.html', {'form': form}) 
-           
-# def submission(request):
-#         if request.method == 'POST':
-#             form = submissionForm(request.POST)
-#             #form = ImageUploadForm(request.POST, request.FILES)
-#             if form.is_valid():
-#                 name = form.cleaned_data['name']
-#                 breed = form.cleaned_data['breed']
-#                 gender = form.cleaned_data['gender']
-#                 age = form.cleaned_data['age']
-#                 additionalinfo = form.cleaned_data['additionalinfo']
-#                 #m = ExampleModel.objects.get(pk=course_id)
-#                 #m.model_pic = form.cleaned_data['image']
-#                 #m.save()
-#                 return HttpResponseRedirect('/Rabbit Entered/')
-#         else:
-#             form = submissionForm()
-#         return render(request, 'submission.html', {'form': form}) 
-
-def rabbitSubmission(request):
-    form = rabbitSubmissionForm(request.POST or None)
-    if form.is_valid():
-        print(form.cleaned_data)
-        rabbit = rabbitProfile(**form.cleaned_data)
-        rabbit.save()
-        return redirect('./')
-    context = {
-        "form" : form
-    }
-    return render(request, 'rabbit/rabbit_submission.html', context)
+# def rabbitSubmission(request):
+#     form = rabbitSubmissionForm(request.POST)
+#     if form.is_valid():
+#         rabbit = rabbitProfile(**form.cleaned_data)
+#         rabbit.save()
+#         return redirect('rabbitSubmission/')
+#     context = {
+#         "form" : form
+#     }
+#     return render(request, 'rabbit/submission.html', context)
