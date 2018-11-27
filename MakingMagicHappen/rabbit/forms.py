@@ -25,16 +25,17 @@ class EmailServiceForm(forms.Form):
     subject = forms.CharField(required=True)
     message = forms.CharField(widget=forms.Textarea, required=True)
 
-# class rabbitSubmissionForm(forms.Form):
-#     name = forms.CharField()
-#     Breed = forms.CharField()
-#     Gender = forms.CharField()
-#     Age = forms.CharField()
-#     Size = forms.CharField(required = False)
-#     Spayed_Neutered = forms.CharField(max_length=5)
-#     Location = forms.CharField(max_length=300)
-#     about = forms.CharField(widget=forms.Textarea)
-#     image = forms.ImageField()
+class rabbitSubmissionForm(forms.Form):
+    animalType = forms.CharField()
+    Name = forms.CharField()
+    Breed = forms.CharField()
+    Gender = forms.CharField()
+    Age = forms.CharField()
+    Size = forms.CharField(required = False)
+    Spayed_Neutered = forms.CharField(max_length=5)
+    Location = forms.CharField(max_length=300)
+    About = forms.CharField(widget=forms.Textarea)
+    # image = forms.ImageField()
 
 
     
