@@ -1,7 +1,7 @@
 from django.shortcuts import render_to_response, render, redirect
 from django.views import generic
 from django.contrib.auth.models import User
-from .forms import EmailServiceForm, newUserForm, changingUserInfoForm
+from .forms import EmailServiceForm, newUserForm, changingUserInfoForm, rabbitSubmissionForm
 from .models import rabbitProfile, gunieaProfile
 from django.views.generic import FormView, TemplateView
 from django.http import JsonResponse, HttpResponseRedirect
@@ -17,7 +17,10 @@ def login(request):
 
 def calendar(request):
     return render(request, 'rabbit/calendar.html')
-  
+
+# view for the registeration page
+# data from the frontend is access using the newUserform
+# validate the from and save the entered data in the user table  
 def register(request):
     form = newUserForm(request.POST or None)
     if form.is_valid():
@@ -29,6 +32,8 @@ def register(request):
         "form" : form
     }
     return render(request, 'rabbit/register.html', context)
+
+# changing the data from the exixting user account
 
 def changingUserInfo(request, id):
     user = User.objects.get(id=id)
@@ -128,13 +133,34 @@ def emailService(request):
     return render(request, "rabbit/contact.html", {'form':form})
 
 
-# def rabbitSubmission(request):
-#     form = rabbitSubmissionForm(request.POST)
-#     if form.is_valid():
-#         rabbit = rabbitProfile(**form.cleaned_data)
-#         rabbit.save()
-#         return redirect('rabbitSubmission/')
-#     context = {
-#         "form" : form
-#     }
-#     return render(request, 'rabbit/submission.html', context)
+def submission(request):
+    form = rabbitSubmissionForm(request.POST)
+    if form.is_valid():
+        if form.cleaned_data['animalType'].lower() == 'rabbit':
+            rabbit = rabbitProfile(name = form.cleaned_data['Name'],
+                                    Breed = form.cleaned_data['Breed'],
+                                    Gender = form.cleaned_data['Gender'],
+                                    Age = form.cleaned_data['Age'],
+                                    Size = form.cleaned_data['Size'],
+                                    Spayed_Neutered = form.cleaned_data['Spayed_Neutered'],
+                                    Location = form.cleaned_data['Location'],
+                                    about = form.cleaned_data['About'])
+            rabbit.save()
+            print('datasaved')
+        else:
+            gunieapig = gunieaProfile(name = form.cleaned_data['Name'],
+                                    Breed = form.cleaned_data['Breed'],
+                                    Gender = form.cleaned_data['Gender'],
+                                    Age = form.cleaned_data['Age'],
+                                    Size = form.cleaned_data['Size'],
+                                    Spayed_Neutered = form.cleaned_data['Spayed_Neutered'],
+                                    Location = form.cleaned_data['Location'],
+                                    about = form.cleaned_data['About'])
+            gunieapig.save()
+        # rabbit = rabbitProfile(**form.cleaned_data)
+        # rabbit.save()
+        return redirect('./')
+    context = {
+        "form" : form
+    }
+    return render(request, 'rabbit/submission.html', context)

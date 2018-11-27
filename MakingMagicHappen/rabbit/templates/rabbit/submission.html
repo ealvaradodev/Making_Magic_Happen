@@ -29,18 +29,25 @@
     <div class="container-fluid">
         <div class="row align-items-center">	
             <div class="col-lg-6 home-about-left no-padding">
-                <div class= "card" style="margin-left:250px; margin-top: 50px; margin-bottom: 30px; align-content: center; width: 500px">
-                    <h5 > Making Magic Happen </h5>
-                    <form action = '.' method = 'POST'> 
+                <div class= "card" style="margin-left:50px; margin-top: 50px; margin-bottom: 30px; align-content: center; width: 100%">
+                    <h5 style='margin-left: 150px'> Making Magic Happen </h5>
+                    <!-- <form method = 'POST'> 
                         <div style="display: inline-block; text-align: center; margin-right: 50px; margin-top: 30px; margin-bottom: 30px">
                             {% csrf_token %} 
                             {{ form.as_p}} 
-                        </div>
-                    
+                            	
+                        </div>   
                     <div style="display: inline-block; text-align: center;">
                         <input type="submit" value='Save' onclick="clicked(event)" />
                     </div>	
-                    </form>
+                    </form> -->
+                    <form method="post">       
+                            {% csrf_token %}
+                               {{ form.as_p }}
+                               <div style="margin-left:450px;">
+                            <button  type="submit" class="primary-btn text-uppercase">Send</button>
+                               </div>
+                               </form>
                 </div> 
             </div>
    
