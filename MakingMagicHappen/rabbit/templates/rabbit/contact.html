@@ -5,7 +5,7 @@
             <div class="overlay overlay-bg"></div>
             <div class="row fullscreen d-flex align-items-center justify-content-start">
                 <div class="banner-content col-lg-8 col-md-12">
-                    <div class="about-content col-lg-12">
+                    
                             <br>
                             <br>
                             <br>
@@ -23,7 +23,7 @@
                         <h1 class="text-white">
                             Contact Us				
                         </h1>	
-                    </div>
+                    
                 </div>											
             </div>
         </div>
@@ -37,7 +37,8 @@
         <div class="container">
             <div class="row">
                 <div class="map-wrap" style="width:100%; height: 445px;" id="map"></div>
-                <div class="col-lg-3 home-about-left">
+                
+                <div class="col-lg-4 home-about-left">
                     <div class="single-contact-address d-flex flex-row">
                         <div class="icon">
                             <span class="lnr lnr-home"></span>
@@ -71,12 +72,8 @@
                         
                         <div class="container-fluid">
                                 <div class="col-lg-11 home-about-right no-padding">
-                                        <div class="form-pad">        
-                                
-                        <form method="post">
-                              
-                                        
-                                               
+                                        <div class="form-pad">              
+                        <form method="post">       
                                             {% csrf_token %}
                                                {{ form.as_p }}
                  
