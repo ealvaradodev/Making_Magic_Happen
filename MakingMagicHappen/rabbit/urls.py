@@ -19,7 +19,7 @@ urlpatterns = [
     path('rabbits/bunnyprofile/<int:id>/', views.eachRabbit, name='bunnyprofile'),
     url(r'^guniea/$', views.guniea_views.as_view(), name='guniea'),
     path('guniea/gunieaprofile/<int:id>/', views.eachGuniea, name='gunieaprofile'),
-    #url(r'^care-info/$', TemplateView.as_view(template_name='rabbit/care-info.html'), name='care-info'),
+    url(r'^careinfo/$', TemplateView.as_view(template_name='rabbit/careinfo.html'), name='careinfo'),
     url(r'^donate/$', TemplateView.as_view(template_name='rabbit/donate.html'), name='donate'),
     url(r'^calendar/$', TemplateView.as_view(template_name='rabbit/calendar.html'), name='calendar'),
     url(r'^deleting/$', login_required(views.usernameList), name='deleting'),
