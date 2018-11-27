@@ -21,4 +21,16 @@ class rabbitProfile(models.Model):
     Location = models.CharField(max_length=300, default='')
     about = models.TextField()
     profile_createdDate = models.DateTimeField(auto_now_add=True)
-    image = models.ImageField(upload_to='rabbit_image', blank= True)
+    image = models.CharField(max_length=400)
+
+class gunieaProfile(models.Model):
+    name = models.CharField(max_length= 42, blank= False)
+    Breed = models.CharField(max_length= 30)
+    Gender = models.CharField(max_length= 6)
+    Age = models.CharField(max_length= 10)
+    Size = models.CharField(max_length= 10)
+    Spayed_Neutered = models.CharField(max_length=5)
+    Location = models.CharField(max_length=300, default='')
+    about = models.TextField()
+    profile_createdDate = models.DateTimeField(auto_now_add=True)
+    image = models.CharField(max_length=400)

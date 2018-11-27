@@ -2,7 +2,7 @@ from django.shortcuts import render_to_response, render, redirect
 from django.views import generic
 from django.contrib.auth.models import User
 from .forms import EmailServiceForm, newUserForm, changingUserInfoForm
-from .models import rabbitProfile
+from .models import rabbitProfile, gunieaProfile
 from django.views.generic import FormView, TemplateView
 from django.http import JsonResponse, HttpResponseRedirect
 from django.core.mail import BadHeaderError, send_mail
@@ -71,11 +71,15 @@ def userDelete(request, id):
 def about(request):
     return render(request, 'rabbit/aboutUs.html')
 
+# rabbit view will get all the rabbit info from the rabbitProfile
+# modle and we can acceaa the object as all_rabbit_list from rabbits.html page 
 class rabbit_views(generic.ListView):
     template_name='rabbit/rabbits.html'
     context_object_name = 'all_rabbit_list'
     queryset = rabbitProfile.objects.all()
 
+
+# I should be able to  access each rabbit profile from bunnyprofile.html
 def eachRabbit(request,id):
     rabbit = rabbitProfile.objects.get(id = id)
     if request.method == "POST":
@@ -84,6 +88,26 @@ def eachRabbit(request,id):
         'rabbit' : rabbit
     }
     return render(request, 'rabbit/bunnyprofile.html', context)
+
+#  view will get all the rabbit info from the rabbitProfile
+# modle and we can acceaa the object as all_rabbit_list from rabbits.html page 
+class guniea_views(generic.ListView):
+    template_name='rabbit/gunieapigs.html'
+    context_object_name = 'all_guniea_list'
+    queryset = gunieaProfile.objects.all()
+
+
+# I should be able to  access each rabbit profile from bunnyprofile.html
+def eachGuniea(request,id):
+    guniea = gunieaProfile.objects.get(id = id)
+    if request.method == "POST":
+        return redirect('/post/new/')
+    context ={
+        'guniea' : guniea
+    }
+    return render(request, 'rabbit/gunieaprofile.html', context)
+
+
 #Enter email address
 #Enter your Subject
 #Message
