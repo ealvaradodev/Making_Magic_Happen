@@ -139,7 +139,7 @@ def submission(request):
     form = rabbitSubmissionForm(request.POST)
     if form.is_valid():
         image = 'static/img/dbpic/'+ (re.sub('[^A-Za-z0-9]+','',form.cleaned_data['Name'])).lower()+ '.jpg'
-        if form.cleaned_data['animalType'].lower() == 'rabbit':
+        if form.cleaned_data['Species'].lower() == 'rabbit':
             rabbit = rabbitProfile(name = form.cleaned_data['Name'],
                                     Breed = form.cleaned_data['Breed'],
                                     Gender = form.cleaned_data['Gender'],
