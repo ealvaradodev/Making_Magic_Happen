@@ -29,7 +29,6 @@ urlpatterns = [
     path('rabbit/userChanging/<int:id>/', login_required(views.changingUserInfo),name='changingUserInfo'),
     url('post/new/', login_required(views.register), name='register'),
     path('contact/', views.emailService, name='contact'),
-    url(r'^register/$', CreateView.as_view(template_name='rabbit/register.html',form_class=UserCreationForm, success_url='/')),
     url('post/new/', views.register, name='register'),
 ]
 
