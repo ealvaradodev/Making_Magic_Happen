@@ -33,11 +33,12 @@ SIZE_CHOICES = [('Small','Small'),('Medium', 'Medium'),('Large','Large')]
 AGE_CHOICES = [('Young','Young'),('Adult', 'Adult')]
 GENDER_CHOICES = [('Male','Male'),('Female', 'Female')]
 FIXED_CHOICES = [('Yes','Yes'),('No', 'No')]
+ANIMAL_CHOICES = [('Rabbit','Rabbit'),('Guinea Pig', 'Guinea Pig')]
 
 class rabbitSubmissionForm(forms.Form):
 
     
-    animalType = forms.CharField()
+    animalType = forms.CharField( widget = forms.RadioSelect(choices =ANIMAL_CHOICES))
     Name = forms.CharField()
     Breed = forms.CharField()
     Gender = forms.CharField( widget = forms.RadioSelect(choices =GENDER_CHOICES))
