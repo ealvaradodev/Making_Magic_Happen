@@ -4130,7 +4130,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 /* contact page add*/
 label{
-  text-align: right;
+  /*text-align: right;*/
   margin-left:45px;
   margin-right:20px;
 }
@@ -4152,6 +4152,7 @@ textarea{
 .bun-img{
   width:170%;
 }
+
 
 /*
 ################

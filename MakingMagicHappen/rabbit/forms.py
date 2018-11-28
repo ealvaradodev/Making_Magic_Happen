@@ -1,6 +1,10 @@
 from django import forms
 from django.contrib.auth.models import User 
 
+
+
+
+
 class newUserForm(forms.Form): 
     username = forms.CharField(max_length = 150, required = True) 
     password = forms.CharField(max_length = 128, required = True,widget=forms.PasswordInput()) 
@@ -25,14 +29,22 @@ class EmailServiceForm(forms.Form):
     subject = forms.CharField(required=True)
     message = forms.CharField(widget=forms.Textarea, required=True)
 
+SIZE_CHOICES = [('Small','Small'),('Medium', 'Medium'),('Large','Large')]
+AGE_CHOICES = [('Young','Young'),('Adult', 'Adult')]
+GENDER_CHOICES = [('Male','Male'),('Female', 'Female')]
+FIXED_CHOICES = [('Yes','Yes'),('No', 'No')]
+
 class rabbitSubmissionForm(forms.Form):
+
+    
     animalType = forms.CharField()
     Name = forms.CharField()
     Breed = forms.CharField()
-    Gender = forms.CharField()
-    Age = forms.CharField()
-    Size = forms.CharField(required = False)
-    Spayed_Neutered = forms.CharField(max_length=5)
+    Gender = forms.CharField( widget = forms.RadioSelect(choices =GENDER_CHOICES))
+    
+    Age = forms.CharField( widget = forms.RadioSelect(choices =AGE_CHOICES))
+    Size = forms.CharField( widget = forms.RadioSelect(choices =SIZE_CHOICES))#forms.CharField(required = False)
+    Spayed_Neutered = forms.CharField( widget = forms.RadioSelect(choices =FIXED_CHOICES))
     Location = forms.CharField(max_length=300)
     About = forms.CharField(widget=forms.Textarea)
     # image = forms.ImageField()
