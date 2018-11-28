@@ -117,15 +117,15 @@
                           <h6>Useful Links</h6>
                           <div class="row">
                             <ul class="col footer-nav">
-                              <li><a href="#">Home</a></li>
-                              <li><a href="#">Service</a></li>
-                              <li><a href="#">About</a></li>
+                              <li><a href="{%url 'rabbit:home'%}">Home</a></li>
+                              <li><a href="{%url 'rabbit:donate'%}">Donate</a></li>
+                              <li><a href="{%url 'rabbit:about' %}">About Us</a></li>
                               <li><a href="{% url 'rabbit:careinfo' %}">Care Info</a></li>
                             </ul>
                             <ul class="col footer-nav">
-                              <li><a href="#">Pricing</a></li>
-                              <li><a href="#">Team</a></li>
-                              <li><a href="#">Blog</a></li>
+                              <li><a href="{% url 'rabbit:calendar'%}">Calendar</a></li>
+                              <li><a href="{% url 'rabbit:adopt'%}">Adopt</a></li>
+                              <li><a href="{% url 'rabbit:volunteer'%}">Volunteer</a></li>
                             </ul>									
                           </div>
                         </div>
