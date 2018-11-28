@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^calendar/$', TemplateView.as_view(template_name='rabbit/calendar.html'), name='calendar'),
     url(r'^deleting/$', login_required(views.usernameList), name='deleting'),
     url('submission/', login_required(views.submission), name='submission'),
+    url(r'^volunteer/$', TemplateView.as_view(template_name='rabbit/volunteer.html'), name='volunteer'),
     path('rabbit/userDeleting/<int:id>/', login_required(views.userDelete),name='deleteUser'),
     path('rabbit/userChanging/<int:id>/', login_required(views.changingUserInfo),name='changingUserInfo'),
     url('post/new/', login_required(views.register), name='register'),
