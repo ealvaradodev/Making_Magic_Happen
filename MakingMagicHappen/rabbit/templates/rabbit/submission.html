@@ -19,7 +19,7 @@
                     <h1 class="text-white">
                         Submission				
                     </h1>	
-                    <!-- <p class="text-white link-nav"><a href="{% url 'rabbit:home'%}">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="./"> Submission</a></p> -->
+                    <p class="text-white link-nav"><a href="{% url 'rabbit:home'%}">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="./"> Submission</a></p>
                 </div>	
             </div>
         </div>
@@ -31,23 +31,16 @@
             <div class="col-lg-6 home-about-left no-padding">
                 <div class= "card" style="margin-left:50px; margin-top: 50px; margin-bottom: 30px; align-content: center; width: 100%">
                     <h5 style='margin-left: 150px'> Making Magic Happen </h5>
-                    <!-- <form method = 'POST'> 
-                        <div style="display: inline-block; text-align: center; margin-right: 50px; margin-top: 30px; margin-bottom: 30px">
-                            {% csrf_token %} 
-                            {{ form.as_p}} 
-                            	
-                        </div>   
-                    <div style="display: inline-block; text-align: center;">
-                        <input type="submit" value='Save' onclick="clicked(event)" />
-                    </div>	
-                    </form> -->
-                    <form method="post">       
-                            {% csrf_token %}
-                               {{ form.as_p }}
-                               <div style="margin-left:450px;">
-                            <button  type="submit" class="primary-btn text-uppercase">Send</button>
-                               </div>
-                               </form>
+                    <div style="display: inline-block; text-align: center; margin-right: 50px; margin-top: 30px; margin-bottom: 30px"></div>
+                        <form method="post">    
+                                {% csrf_token %}
+                                {{ form.as_p }}
+                                <div style="margin-left:50px;">
+                                        {% include 'rabbit/includes/image_upload.html' %}	
+                                <button  type="submit" class="primary-btn text-uppercase">Send</button>
+                                </div>
+                        </form>
+                    </div>
                 </div> 
             </div>
    
@@ -55,18 +48,3 @@
         </div>	
 </section>
 {% endblock %}
-{% block scriptlink %}
-
-<script>
-    function clicked(e){
-        //if(!confirm('Are you sure?'))e.preventDefault();
-        var user_choice = window.confirm('Would you like to continue?');
-         if(user_choice==true) {
-            window.alert('The bunny profile was created.');
-            element.submit("./");
-        } else {
-            return false;
-        }
-    }
-</script>
-{% endblock scriptlink %}

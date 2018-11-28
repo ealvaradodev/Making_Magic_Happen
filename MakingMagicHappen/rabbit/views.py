@@ -1,5 +1,7 @@
 from django.shortcuts import render_to_response, render, redirect
 from django.views import generic
+import os, re
+from django.conf import settings
 from django.contrib.auth.models import User
 from .forms import EmailServiceForm, newUserForm, changingUserInfoForm, rabbitSubmissionForm
 from .models import rabbitProfile, gunieaProfile
@@ -136,6 +138,7 @@ def emailService(request):
 def submission(request):
     form = rabbitSubmissionForm(request.POST)
     if form.is_valid():
+        image = 'static/img/dbpic/'+ (re.sub('[^A-Za-z0-9]+','',form.cleaned_data['Name'])).lower()+ '.jpg'
         if form.cleaned_data['animalType'].lower() == 'rabbit':
             rabbit = rabbitProfile(name = form.cleaned_data['Name'],
                                     Breed = form.cleaned_data['Breed'],
@@ -144,7 +147,8 @@ def submission(request):
                                     Size = form.cleaned_data['Size'],
                                     Spayed_Neutered = form.cleaned_data['Spayed_Neutered'],
                                     Location = form.cleaned_data['Location'],
-                                    about = form.cleaned_data['About'])
+                                    about = form.cleaned_data['About'],
+                                    image = image)
             rabbit.save()
             print('datasaved')
         else:
@@ -155,7 +159,8 @@ def submission(request):
                                     Size = form.cleaned_data['Size'],
                                     Spayed_Neutered = form.cleaned_data['Spayed_Neutered'],
                                     Location = form.cleaned_data['Location'],
-                                    about = form.cleaned_data['About'])
+                                    about = form.cleaned_data['About'],
+                                    image = image)
             gunieapig.save()
         # rabbit = rabbitProfile(**form.cleaned_data)
         # rabbit.save()
