@@ -38,7 +38,7 @@ ANIMAL_CHOICES = [('Rabbit','Rabbit'),('Guinea Pig', 'Guinea Pig')]
 class rabbitSubmissionForm(forms.Form):
 
     
-    animalType = forms.CharField( widget = forms.RadioSelect(choices =ANIMAL_CHOICES))
+    Species = forms.CharField( widget = forms.RadioSelect(choices =ANIMAL_CHOICES))
     Name = forms.CharField()
     Breed = forms.CharField()
     Gender = forms.CharField( widget = forms.RadioSelect(choices =GENDER_CHOICES))
