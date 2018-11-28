@@ -29,17 +29,19 @@
     <div class="container-fluid">
         <div class="row align-items-center">	
             <div class="col-lg-6 home-about-left no-padding">
-                <div class= "card" style="margin-left:50px; margin-top: 50px; margin-bottom: 30px; align-content: center; width: 100%">
-                    <h5 style='margin-left: 150px'> Making Magic Happen </h5>
+                <div class= "card" style="margin-left:50px; margin-top: 50px; margin-bottom: 30px; align-content: center; width: 100%; padding:10px;">
+                    <h5 style='margin-left: 150px'> Rabbit Submission Form</h5>
                     <div style="display: inline-block; text-align: center; margin-right: 50px; margin-top: 30px; margin-bottom: 30px"></div>
                         <form method="post">    
                                 {% csrf_token %}
                                 {{ form.as_p }}
                                 <div style="margin-left:50px;">
                                         {% include 'rabbit/includes/image_upload.html' %}	
-                                <button  type="submit" class="primary-btn text-uppercase">Send</button>
+                                        <br>
+                                <button  type="submit" class="primary-btn text-uppercase" style="margin-left:450px;">Send</button>
                                 </div>
                         </form>
+                        <br>
                     </div>
                 </div> 
             </div>
