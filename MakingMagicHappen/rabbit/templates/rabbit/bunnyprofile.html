@@ -20,17 +20,36 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6">
                     <h5 class="card-title">{{rabbit.name}}</h5>
-                    <img class="card-img-bottom" src="/{{rabbit.image}}" alt="Card image cap"></a>
+                    <img class="card-img-bottom" style="width:150%;" src="/{{rabbit.image}}" alt="Card image cap"></a>
                     <div class="card-body">
                             <p class="card-text">Breed: &nbsp {{rabbit.Breed}}</p>
                             <p class="card-text">Location: &nbsp {{rabbit.Location}}</p>
                     </div>
                 </div>
                 <div class="col-lg-6 home-about-right no-padding" style="margin-left: 150px">
-                    <h2 style="align: center">About Me </h2>
+                    <h2 style="align: center">About Me </h2> <br>
                     <p>{{rabbit.about}}</p>
                     </div>
             </div>
         </div>	
     </section>	
+    <!-- Start callto-top Area -->
+<section class="callto-top-area">
+        <div class="container">
+            <div class="row justify-content-between callto-top-wrap pt-40 pb-40">
+                <div class="col-lg-8 callto-top-left">
+                    <h1>Interested in {{rabbit.name}}? </h1>
+                </div>
+                <div class="col-lg-4 callto-top-right">
+                    <a href="https://docs.google.com/forms/d/12KUCiKXX6t2PpMYXGJX-XwXyRjlfRj4bgR3KrYGv3hE/viewform?edit_requested=true" class="primary-btn">Adopt!</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfWWDKsYtDCcgtCzIgxR-HSeqWumRIz5-beIfEw8O_RI3s4Uw/viewform?c=0&w=1" class="primary-btn">Foster To Adopt!</a>
+                </div>							
+            </div>
+        </div>	
+    </section>
+    <!-- End callto-top Area -->
+<br>
+<br>
+<br>
+
 {% endblock %}
