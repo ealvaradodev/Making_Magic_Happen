@@ -1,0 +1,370 @@
+{% extends 'rabbit/base.html' %}
+{% load static %}
+{% block csslink%}
+<style>
+    #more1, #more2, #more3{
+        display: none;
+    }
+</style>
+{% endblock csslink %}
+{% block content %}
+<!--Start banner Area-->
+<section class="banner-area3 relative" id="home">	
+    <div class="overlay overlay-bg"></div>
+    <div class="container">				
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="about-content col-lg-12">
+                <h1 class="text-white">
+                    Volunteer				
+                </h1>	
+                <p class="text-white link-nav"><a href="{% url 'rabbit:home'%}">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="{% url 'rabbit:volunteer' %}"> Volunteer</a></p>
+            </div>	
+        </div>
+    </div>
+</section>
+<!-- End banner Area -->	
+<br>
+<br>
+<br>
+<!-- Start home-volunteer1 Area -->
+<section class="home-about-area">
+    <div class="container-fluid">
+        <div class="row align-items-center">	
+            <div class="col-lg-6 home-about-left no-padding">
+                <div class="card" style="width: 18rem; margin-left: 200px">
+                    <img src="{% static 'img/volunteer.jpg' %}" alt="">
+                    <div class="card-body">
+                            <p class="card-text">Volunteers and foster homes are always needed. Join our team!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 home-about-right no-padding">
+                <h1>
+                    Become a Volunteer
+                </h1>
+                
+                We are always looking for new volunteers for a variety of opportunities. Whether its fostering, 
+                transporting rabbits, or helping at Care Day, there are MANY ways to utilize your talents (and even 
+                those you are waiting to develop!) here at Magic Happens. Are you great at making phone calls or networking? 
+                Try calling local business to see if they have items to donate. Totally shy? Click & print the brochure from 
+                the site and post them around town, or stay at home and play with a bun by fostering. Whether you have a lot 
+                of time or hardly any, we can use your help!
+
+                <p>Most events are listed on the main page of our website, and volunteer requests for boarding, transport or events 
+                are done through our Facebook group for volunteers (not the main "business page"). 
+                </p>
+                
+                <br>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>	
+</section>
+<br>
+<br>
+<br>
+<!-- End home-volunteer1 Area -->	
+<!-- Start home-volunteer2 Area -->
+<section class="home-about-area">
+    <div class="container-fluid">
+        <div class="row align-items-center">	
+            <div class="col-lg-6 home-about-left no-padding">
+                <div class="card" style="width: 18rem; margin-left: 200px">
+                    <img src="{% static 'img/volunteer1.jpg' %}" alt="">
+                    <div class="card-body">
+                            <p class="card-text">Messy, but cute.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 home-about-right no-padding">
+                <h1>
+                    Care Day
+                </h1>
+                
+                Every other Sunday (dates posted on the main page) we have a Care Day where we clean and sanitize all the 
+                cages, litterboxes, and food bowls, do nails trims, grooming, and socializing for the bunnies in the Bungalow, 
+                and put everything back and give everybun fresh food, hay, treats, and toys. Anyone is welcome to come help 
+                clean and socialize the buns!
+                     
+                <br>
+                <br>
+                <br>
+
+            </div>
+        </div>
+    </div>	
+</section>
+<br>
+<br>
+<br>
+<!-- End home-volunteer2 Area -->
+<!-- Start home-volunteer3 Area -->
+<section class="home-about-area">
+        <div class="container-fluid">
+            <div class="row align-items-center">	
+                <div class="col-lg-6 home-about-left no-padding">
+                    <div class="card" style="width: 18rem; margin-left: 200px; padding: left">
+                        <img src="{% static 'img/volunteer2.jpg' %}" alt="">
+                        <div class="card-body">
+                                <p class="card-text"> We have a variety of adoption day themes including football in the fall!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 home-about-right no-padding">
+                    <h1>
+                        Adoption Day
+                    </h1>
+                    MHRR holds Adoption Days every other weekend (location, times & dates available on main page). We try to 
+                    have 2-5 volunteers to not only meet adopting families, but let children pet the rabbits and talk to people 
+                    about bunny care. Many times we get to meet former adopters! It's great to strike up a conversation with people 
+                    who have never really met a bunny up close. 
+                    And of course between visitors we play with the bunnies! 
+                         
+                    <br>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </div>	
+    </section>
+    <br>
+    <br>
+    <br>
+    <!-- End home-volunteer3 Area -->
+    <!-- Start home-volunteer4 Area -->
+<section class="home-about-area">
+    <div class="container-fluid">
+        <div class="row align-items-center">	
+            <div class="col-lg-6 home-about-left no-padding">
+                <div class="card" style="width: 18rem; margin-left: 200px; padding: left">
+                    <img src="{% static 'img/volunteer3.jpg' %}" alt="">
+                    <div class="card-body">
+                            <p class="card-text"> MHRR participates in events around Louisiana, with Pet Fest being one of the largest!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 home-about-right no-padding">
+                <h1>
+                    Work Special Events
+                </h1>
+                Magic Happens does a variety events, from classroom presentations to huge events like the 
+                LSU Vet School Open House or Pet Fest in Metairie. At these events we sometimes need a LOT 
+                of people! We need "bunny-guards" that can also show others how to properly pet or hold the 
+                rabbits, as well as some who can answer questions about our rescue to visitors. Even if you
+                 haven't been with us long, there's no better way to learn than to come out and shadow someone. 
+                 Sometimes we need to fill other duties, such as yard work or laundry. 
+                     
+                <br>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>	
+</section>
+<br>
+<br>
+<br>
+<!-- End home-volunteer4 Area -->
+<!-- Start home-volunteer5 Area -->
+<section class="home-about-area">
+    <div class="container-fluid">
+        <div class="row align-items-center">	
+            <div class="col-lg-6 home-about-left no-padding">
+                <div class="card" style="width: 18rem; margin-left: 200px; padding: left">
+                    <img src="{% static 'img/volunteer4.jpg' %}" alt="">
+                    <div class="card-body">
+                            <p class="card-text"> Simon doesn't want attention... he DEMANDS it!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 home-about-right no-padding">
+                <h1>
+                    Foster
+                </h1>
+                Whether temporary or until a rabbit gets a home, fostering helps in MANY ways. It helps
+                 socialize a rabbit and help them become friendlier (especially nervous bunnies who need 
+                 an experienced rabbit person), as well as learn their likes & dislikes for their new family. 
+                 It helps ease the workload at the main foster house, and the bunny can enjoy more one-on-one 
+                 time and exercise! Not to mention fostered bunnies get adopted more quickly for other reasons
+                  - foster families sometimes end up adopting or have friends & family who fall in love while 
+                  visiting, and they get more publicity on social media too. Visit our Foster page for more 
+                  info on fostering. 
+                     
+                <br>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>	
+</section>
+<br>
+<br>
+<br>
+<!-- End home-volunteer5 Area -->
+<!-- Start home-volunteer6 Area -->
+<section class="home-about-area">
+    <div class="container-fluid">
+        <div class="row align-items-center">	
+            <div class="col-lg-6 home-about-left no-padding">
+                <div class="card" style="width: 18rem; margin-left: 200px; padding: left">
+                    <img src="{% static 'img/volunteer5.jpg' %}" alt="">
+                    <div class="card-body">
+                            <p class="card-text"> Monty arrives at Magic Happens Rabbit Rescue.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 home-about-right no-padding">
+                <h1>
+                    Transport
+                </h1>
+                MHRR errands can include picking up rabbits from animal control 
+                facilities, meeting a family who is surrendering, fostering, or 
+                adopting a bunny, or going to pick up donated cages or supplies. 
+                     
+                <br>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>	
+</section>
+<br>
+<br>
+<br>
+<!-- End home-volunteer6 Area -->
+<!-- Start home-volunteer7 Area -->
+<section class="home-about-area">
+    <div class="container-fluid">
+        <div class="row align-items-center">	
+            <div class="col-lg-6 home-about-left no-padding">
+                <div class="card" style="width: 18rem; margin-left: 200px; padding: left">
+                    <img src="{% static 'img/volunteer6.jpg' %}" alt="">
+                    <div class="card-body">
+                            <p class="card-text"> Lilly passes out a card</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 home-about-right no-padding">
+                <h1>
+                    Spread the Word!
+                </h1>
+                <a href="http://www.magichappensrescue.com/printables/mhrrbrochure.pdf">Our brochure</a> is easily printed, and we need people who can print and post it at vet clinics and stores and other places 
+                where people can see that there is a need for bunny adoptions. You can also post it at your work or office, church, 
+                school, or scout meetings. No need to contact us, just print & post as you're able. You don't even have to be a volunteer! 
+                     
+                <br>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>	
+</section>
+<br>
+<br>
+<br>
+<!-- End home-volunteer7 Area -->
+<!-- Start home-volunteer8 Area -->
+<section class="home-about-area">
+    <div class="container-fluid">
+        <div class="row align-items-center">	
+            <div class="col-lg-6 home-about-left no-padding">
+                <div class="card" style="width: 18rem; margin-left: 200px; padding: left">
+                    <img src="{% static 'img/volunteer7.jpg' %}" alt="">
+                    <div class="card-body">
+                            <p class="card-text"> Sir Hops-a-lot works his bunny-charm!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 home-about-right no-padding">
+                <h1>
+                    Scout for Donations
+                </h1>
+                We're always on the lookout to network with local businesses to see about 
+                donations for the rabbits. We always need paper towels, vinegar, and Dawn 
+                dishsoap. Other places to try could be fruit stands or grocery stores for 
+                fruits & veggies (maybe crushed, not rotten!) or hardware stores for PVC 
+                or cardboard rolls big enough for buns to hop through. We keep an ongoing 
+                <a href="https://smile.amazon.com/gp/registry/wishlist/O10GJ20IQ9MS/ref=cm_wl_list_o_2?">Amazon Wishlist</a>. 
+                     
+                <br>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>	
+</section>
+<br>
+<br>
+<br>
+<!-- End home-volunteer8 Area -->
+<!-- Start home-volunteer9 Area -->
+<section class="home-about-area">
+    <div class="container-fluid">
+        <div class="row align-items-center">	
+            <div class="col-lg-6 home-about-left no-padding">
+                <div class="card" style="width: 18rem; margin-left: 200px; padding: left">
+                    <img src="{% static 'img/volunteer8.jpg' %}" alt="">
+                    <div class="card-body">
+                            <p class="card-text"> Try some relaxing Bunny Yoga!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 home-about-right no-padding">
+                <h1>
+                    Start a Fundraiser
+                </h1>
+                If you've got a talent or craft that you enjoy as a hobby, put it to good use! 
+                We've come up with many fundraisers from collecting ink cartridges to a 
+                cafepress store. Other volunteers have done created fundraisers from their local
+                 Etsy shops or services that they do. The amount you donate is up to you!
+                     
+                <br>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>	
+</section>
+<br>
+<br>
+<br>
+<!-- End home-volunteer9 Area -->
+<!-- Start home-volunteer10 Area -->
+<section class="home-about-area">
+    <div class="container-fluid">
+        <div class="row align-items-center">	
+            <div class="col-lg-6 home-about-left no-padding">
+                <div class="card" style="width: 18rem; margin-left: 200px; padding: left">
+                    <img src="{% static 'img/volunteer9.jpg' %}" alt="">
+                    <div class="card-body">
+                            <p class="card-text"> Any help is welcome to make the Magic Happen!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 home-about-right no-padding">
+                <h1>
+                    Start a Fundraiser
+                </h1>
+                Remember - there are no specific or expected requirements or time commitment to 
+                become a volunteer, just a love for rabbits and their best interest in mind. To 
+                help at an event, individuals under 16 years old must have a parent or legal 
+                guardian accompany them. If you would like to join us as a MHRR volunteer, 
+                fill out our Volunteer Application (you can <a href="http://www.magichappensrescue.com/printables/mhrrvolunteer.doc">download it</a> 
+                & bring it with you or <a href="https://goo.gl/forms/oN0QLA8fXQpT6BKW2">fill it out online</a>. 
+                You'll also need to download or fill out <a href="http://www.magichappensrescue.com/printables/mhrrvolunteerwaiver.doc">the Volunteer Waiver</a> in person. 
+                <p>Got questions? Give us a call!</p>
+                <p>225-341-2866 or wendy@magichappensrescue.com.</p>
+                     
+                <br>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>	
+</section>
+<br>
+<br>
+<br>
+<!-- End home-volunteer10 Area -->
+{% endblock%}
